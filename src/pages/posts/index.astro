@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Nav from '../../components/Nav.astro'
+import Footer from '../../components/Footer.astro'
+import Hero from '../../components/blog/Hero.astro'
+import PostCard from '../../components/blog/PostCard.astro'
+import { getCollection } from 'astro:content'
+
+// const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
+//   .sort((a: any, b: any) => b.frontmatter.pubDate - a.frontmatter.pubDate)
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout
+  title="Blog — Macarel Studio"
+  description="Notes techniques, retours d'expérience et réflexions sur le métier du développement web. Écrites depuis Carcassonne."
+>
+  <Nav />
+  <main>
+    <Hero />
+    
+    <section class="pb-12">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {posts.map((post: any) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              author={post.data.author}
+              tags={post.data.tags || []}
+              url={`/posts/${post.id}`}
+            />
+          ))}
+        </div>
+        
+        {posts.length === 0 && (
+          <div class="text-center py-16" style="color: var(--color-macarel-schiste);">
+            <p class="text-lg mb-2">Aucun article pour le moment.</p>
+            <p class="text-sm">Revenez bientôt — quelque chose se prépare.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

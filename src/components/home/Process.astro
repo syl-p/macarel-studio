@@ -1,0 +1,36 @@
+---
+const steps = [
+  {
+    n: '01 /',
+    title: 'On cadre ensemble',
+    body: "Avant d'écrire une ligne, je comprends votre métier, vos contraintes, vos utilisateurs. Le brief technique sort de cette conversation — pas d'un template.",
+  },
+  {
+    n: '02 /',
+    title: 'Je livre en itérations courtes',
+    body: 'Vous voyez l\'outil se construire semaine après semaine. On ajuste en temps réel — pas à la recette finale quand il est trop tard.',
+  },
+  {
+    n: '03 /',
+    title: 'Vous repartez autonomes',
+    body: "Code documenté, déploiement automatisé, formation si besoin. L'outil vous appartient — vous pouvez le faire évoluer sans moi si vous voulez.",
+  },
+]
+---
+ 
+<section class="section container mx-auto">
+  <span class="section-label">Comment je travaille</span>
+ 
+  <div class="mt-1">
+    {steps.map((step) => (
+      <div class="step-row">
+        <span class="step-number">{step.n}</span>
+        <div>
+          <p class="step-title">{step.title}</p>
+          <p class="step-body">{step.body}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+ 

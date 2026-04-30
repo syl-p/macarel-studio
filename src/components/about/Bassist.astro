@@ -1,0 +1,103 @@
+<section
+  class="px-10 py-14 border-b border-thin"
+  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+>
+  <div class="container mx-auto grid grid-cols-1 gap-12 sm:grid-cols-2 sm:items-center">
+ 
+    <!-- Texte -->
+    <div>
+      <span class="section-label">En dehors du code</span>
+      <h2 class="section-h2 mt-1 mb-5">Bassiste.</h2>
+ 
+      <p class="text-base leading-loose mb-5" style="color: var(--color-macarel-schiste);">
+        Depuis aussi longtemps que je développe, je joue de la basse.
+        Parcours semi-professionnel, scènes, groupes, studios d'enregistrement.
+        Ce n'est pas un hobby anodin — c'est une façon d'être.
+      </p>
+ 
+      <p class="text-base leading-loose mb-5" style="color: var(--color-macarel-schiste);">
+        Un bassiste ne joue pas pour briller. Il joue pour que les autres
+        puissent briller. Il pose la fondation, tient le groove, rend
+        l'ensemble cohérent. Sans lui tout s'effondre — mais c'est rarement
+        lui qu'on entend en premier.
+      </p>
+ 
+      <p class="text-base leading-loose" style="color: var(--color-macarel-schiste);">
+        C'est exactement comme ça que j'aborde le développement.
+        Je suis là pour porter votre vision, pas pour imposer la mienne.
+        Le bon outil, comme la bonne ligne de basse, se remarque
+        par ce qu'il permet — pas par ce qu'il affiche.
+      </p>
+    </div>
+ 
+    <!-- Encart visuel -->
+    <div
+      class="p-8 rounded-2xl flex flex-col gap-6"
+      style="background-color: var(--color-macarel-nuit);"
+    >
+      <!-- Icône basse stylisée -->
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M20 4 L20 20 C20 23.3 17.3 26 14 26 C10.7 26 8 23.3 8 20 C8 16.7 10.7 14 14 14 C15.1 14 16.1 14.3 17 14.8 L17 4"
+          fill="none" stroke="#F2A122" stroke-width="1.5" stroke-linecap="round"
+        />
+        <path d="M17 4 L20 4" stroke="#F2A122" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="14" cy="20" r="3" fill="none" stroke="#F7C97A" stroke-width="1.2"/>
+        <path d="M22 8 L24 8 M22 11 L24 11" stroke="#5C3D1E" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+ 
+      <!-- Citation -->
+      <blockquote>
+        <p
+          class="text-lg font-medium leading-snug mb-4"
+          style="color: var(--color-macarel-calcaire); font-family: var(--font-display);"
+        >
+          "Le meilleur code,<br>comme la meilleure<br>ligne de basse, est<br>
+          <em class="not-italic" style="color: var(--color-macarel-soleil);">
+            celui qu'on n'entend pas.
+          </em>"
+        </p>
+        <footer
+          class="text-xs tracking-wider uppercase"
+          style="color: var(--color-macarel-garrigue);"
+        >
+          — Sylvain, Macarel Studio
+        </footer>
+      </blockquote>
+ 
+      <!-- Séparateur -->
+      <div
+        class="border-t border-thin"
+        style="border-color: var(--color-macarel-garrigue);"
+      ></div>
+ 
+      <!-- Parallèle basse / dev -->
+      <div class="flex flex-col gap-3">
+        {[
+          { music: 'Tenir le groove',      dev: 'Garder la cohérence du code'     },
+          { music: 'Porter le chanteur',   dev: 'Porter la vision du client'       },
+          { music: 'Jouer juste, pas fort',dev: 'Livrer simple, pas impressionnant'},
+        ].map((pair) => (
+          <div class="grid grid-cols-2 gap-3">
+            <div
+              class="text-xs leading-relaxed px-3 py-2 rounded-md"
+              style="color: var(--color-macarel-miel);
+                     background-color: rgba(242,161,34,0.08);"
+            >
+              ♩ {pair.music}
+            </div>
+            <div
+              class="text-xs leading-relaxed px-3 py-2 rounded-md"
+              style="color: var(--color-macarel-brise, #7BB8E8);
+                     background-color: rgba(255,255,255,0.04);
+                     color: var(--color-macarel-calcaire); opacity: 0.7;"
+            >
+              → {pair.dev}
+            </div>
+          </div>
+        ))}
+      </div>
+ 
+    </div>
+  </div>
+</section>

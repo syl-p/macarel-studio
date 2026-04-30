@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  tags: string[];
+  url: string;
+}
+
+const { title, description, pubDate, author, tags, url } = Astro.props;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('fr-FR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+---
+
+<article class="card group">
+  <div class="flex flex-wrap gap-1.5 mb-3">
+    {tags.map((tag) => (
+      <a href={`/tags/${tag}`} class="badge-argile hover:opacity-80 transition-opacity">
+        {tag}
+      </a>
+    ))}
+  </div>
+  
+  <a href={url} class="block">
+    <h2 class="section-h2 group-hover:text-macarel-argile transition-colors mb-2">
+      {title}
+    </h2>
+    
+    <p class="text-base leading-relaxed mb-4" style="color: var(--color-macarel-schiste);">
+      {description}
+    </p>
+  </a>
+  
+  <div class="flex items-center justify-between">
+    <span class="text-xs" style="color: var(--color-macarel-garrigue);">
+      {formattedDate}
+    </span>
+    <span class="text-xs" style="color: var(--color-macarel-garrigue);">
+      {author}
+    </span>
+  </div>
+</article>

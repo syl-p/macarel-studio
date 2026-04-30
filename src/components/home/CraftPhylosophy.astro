@@ -1,0 +1,49 @@
+---
+const stack = [
+  { name: 'Ruby on Rails',         desc: 'Backend principal',  color: '#C84B11' },
+  { name: 'Hotwire · Turbo · Stimulus', desc: 'Hypermedia',   color: '#F2A122' },
+  { name: 'Inertia.js + React',      desc: 'Frontend réactif',     color: '#3B82F6' },
+  { name: 'Astro',      desc: 'Site statique',     color: '#2D6A4F' },
+  { name: 'Kamal · GitHub Actions',desc: 'Infra & CI/CD',      color: '#7A5C40' },
+]
+---
+ 
+<section class="craft-section">
+    <div class="container mx-auto">
+        <span class="section-label" style="color: var(--color-macarel-garrigue); opacity: 0.7;">
+            La philosophie craft
+        </span>
+        
+        <div class="grid grid-cols-1 gap-8 mt-5 sm:grid-cols-2 sm:items-center">
+            
+            <div>
+                <h2 class="text-2xl font-medium tracking-tight leading-snug mb-3"
+                    style="color: var(--color-macarel-nuit);">
+                    Construire avec les bons outils, pas les plus populaires.
+                </h2>
+                <p class="text-base leading-loose mb-3" style="color: var(--color-macarel-garrigue);">
+                    Rails + Hotwire — c'est une approche que peu de développeurs
+                    maîtrisent vraiment. Le résultat : des interfaces réactives, un backend
+                    simple, du code lisible dans deux ans.
+                </p>
+                <p class="text-base leading-loose" style="color: var(--color-macarel-garrigue);">
+                    Je l'utilise pour tous mes projets, du SaaS au site vitrine. C'est ma
+                    stack de prédilection, celle que je connais le mieux, et qui me permet
+                    d'offrir la meilleure qualité possible à mes clients.
+                </p>
+            </div>
+        
+            <div class="flex flex-col gap-1.5">
+            {stack.map((item) => (
+                <div class="craft-stack-item">
+                <span class="craft-stack-dot" style={`background-color: ${item.color};`}></span>
+                <span class="craft-stack-name">{item.name}</span>
+                <span class="craft-stack-desc">{item.desc}</span>
+                </div>
+            ))}
+            </div>
+        
+        </div>
+    </div>
+</section>
+ 

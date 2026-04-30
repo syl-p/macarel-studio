@@ -1,0 +1,62 @@
+---
+const principles = [
+  {
+    title: 'Le code sans superflu',
+    body: "Chaque ligne a une raison d'être. Rails + Hotwire me permet d'envoyer du HTML depuis le serveur sans couche JS inutile — des interfaces réactives, un backend simple, une dette technique quasi nulle.",
+    color: '#C84B11',
+  },
+  {
+    title: 'La précision du bon outil',
+    body: "Je prends le temps de comprendre votre métier avant de coder. Un outil métier réussi, c'est celui que vos équipes utilisent sans formation parce qu'il colle à leur réalité.",
+    color: '#F2A122',
+  },
+  {
+    title: 'La durabilité par défaut',
+    body: "Code documenté, tests, CI/CD en place dès le début. Dans deux ans, n'importe quel développeur Rails doit pouvoir reprendre le projet sans décryptage.",
+    color: '#2D6A4F',
+  },
+]
+---
+ 
+<section
+  class="px-10 py-14 border-b border-thin"
+  style="background-color: var(--color-macarel-craft);
+         border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+>
+  <div class="container mx-auto">
+        <span class="section-label" style="color: var(--color-macarel-garrigue); opacity: 0.7;">
+            La philosophie
+        </span>
+        <h2 class="section-h2 mt-1 mb-3">Ce en quoi je crois.</h2>
+        <p
+            class="text-base leading-loose max-w-prose mb-10"
+            style="color: var(--color-macarel-schiste);"
+        >
+            Dix ans à coder, c'est dix ans à affiner des convictions.
+            Voilà les trois qui guident chaque projet que je prends en charge.
+        </p>
+        
+        <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {principles.map((p) => (
+            <div class="card">
+                <div
+                class="w-2 h-2 rounded-full mb-4"
+                style={`background-color: ${p.color};`}
+                ></div>
+                <h3
+                class="text-base font-medium mb-2"
+                style="color: var(--color-macarel-encre);"
+                >
+                {p.title}
+                </h3>
+                <p
+                class="text-sm leading-loose"
+                style="color: var(--color-macarel-schiste);"
+                >
+                {p.body}
+                </p>
+            </div>
+            ))}
+        </div>
+    </div>
+</section>

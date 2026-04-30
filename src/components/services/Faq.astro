@@ -1,0 +1,75 @@
+---
+const faqs = [
+  {
+    q: "Pour quel type de projet êtes-vous le plus pertinent ?",
+    a: "Outils métier sur mesure et SaaS avec logique métier complexe. Si votre besoin peut être couvert par Notion ou Airtable, je vous le dirai honnêtement.",
+  },
+  {
+    q: "Pourquoi Rails plutôt qu'une stack Node/React ?",
+    a: "Rails + Hotwire permet de livrer des outils robustes deux à trois fois plus vite. Moins de code, moins de surface d'attaque, plus facile à maintenir.",
+  },
+  {
+    q: "Est-ce que vous reprenez du code existant ?",
+    a: "Oui. Audit de codebase, refactoring, montée de version — je commence toujours par un audit avant de chiffrer.",
+  },
+  {
+    q: "Comment se passe la tarification ?",
+    a: "Forfait pour les périmètres définis, régie journalière pour l'accompagnement. On définit ensemble lors du premier échange.",
+  },
+]
+---
+ 
+<section class="px-10 py-12">
+  <span class="section-label">Questions fréquentes</span>
+  <h2 class="section-h2 mt-1 mb-6">Ce qu'on me demande souvent.</h2>
+ 
+  <div class="max-w-wide flex flex-col gap-3">
+    {faqs.map((faq) => (
+      <details class="faq-item">
+        <summary class="faq-summary">
+          <span>{faq.q}</span>
+          <svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </summary>
+        <p class="faq-answer">{faq.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+ 
+<style>
+  .faq-item {
+    border-bottom: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);
+  }
+  .faq-item:first-child {
+    border-top: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);
+  }
+  .faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-macarel-encre);
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-summary:hover { color: var(--color-macarel-argile); }
+  .faq-chevron {
+    color: var(--color-macarel-schiste);
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+  }
+  details[open] .faq-chevron { transform: rotate(180deg); }
+  details[open] .faq-summary { color: var(--color-macarel-argile); }
+  .faq-answer {
+    font-size: var(--text-sm);
+    color: var(--color-macarel-schiste);
+    line-height: 1.65;
+    padding-bottom: 14px;
+  }
+</style>

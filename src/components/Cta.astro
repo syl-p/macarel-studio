@@ -1,0 +1,28 @@
+---
+interface Props {
+  title?: string
+  subtitle?: string
+  cta?: string
+  href?: string
+}
+ 
+const {
+  title    = "Un outil métier à construire ?",
+  subtitle = "Premier échange gratuit · Réponse sous 48h · Basé à Carcassonne",
+  cta      = "Parler du projet",
+  href     = "/contact",
+} = Astro.props
+---
+ 
+<div class="cta-band container mx-auto">
+  <div>
+    <p class="cta-band-title">
+      {title}<br>
+      <em class="not-italic" style="color: var(--color-macarel-soleil);">
+        Macarel, on attaque.
+      </em>
+    </p>
+    <p class="cta-band-sub">{subtitle}</p>
+  </div>
+  <a href={href} class="btn-primary">{cta}</a>
+</div>

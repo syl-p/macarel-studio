@@ -1,0 +1,70 @@
+---
+const year = new Date().getFullYear()
+ 
+const links = [
+  { href: '/services',  label: 'Services'  },
+  { href: '/a-propos',  label: 'À propos'  },
+  { href: '/contact',   label: 'Contact'   },
+]
+ 
+const socials = [
+  { href: 'https://github.com/',   label: 'GitHub'   },
+  { href: 'https://linkedin.com/', label: 'LinkedIn' },
+]
+---
+ 
+<footer class="px-7 py-10 border-t border-thin"
+  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);">
+ 
+  <div class="flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-start container mx-auto">
+ 
+    <!-- Identité -->
+    <div>
+      <div class="flex items-center gap-2.5 mb-2">
+        <svg width="22" height="22" viewBox="0 0 38 38" fill="none">
+          <rect width="38" height="38" rx="9" fill="#1A0A00"/>
+          <text x="10" y="28" font-family="Georgia,serif" font-size="22"
+                font-weight="700" fill="#F2A122">!</text>
+        </svg>
+        <span class="logo-wordmark">
+          Macarel
+          <span class="logo-wordmark-sub">Studio</span>
+        </span>
+      </div>
+      <p class="text-base text-macarel-schiste leading-relaxed max-w-xs">
+        Artisan Rails basé à Carcassonne.<br>
+        Outils métier, SaaS, accompagnement technique.
+      </p>
+    </div>
+ 
+    <!-- Navigation -->
+    <nav class="flex flex-col gap-1.5">
+      <span class="text-label mb-1">Navigation</span>
+      {links.map(({ href, label }) => (
+        <a href={href} class="nav-link text-base">{label}</a>
+      ))}
+    </nav>
+ 
+    <!-- Réseaux -->
+    <nav class="flex flex-col gap-1.5">
+      <span class="text-label mb-1">Ailleurs</span>
+      {socials.map(({ href, label }) => (
+        <a href={href} target="_blank" rel="noopener noreferrer"
+           class="nav-link text-base">{label}</a>
+      ))}
+    </nav>
+ 
+  </div>
+ 
+  <!-- Bas de page -->
+  <div class="mt-8 pt-5 border-t flex flex-col gap-1 sm:flex-row sm:justify-between container mx-auto"
+    style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 30%, transparent);">
+    <p class="text-xs text-macarel-schiste">
+      © {year} Macarel Studio · Carcassonne, Occitanie
+    </p>
+    <p class="text-xs text-macarel-schiste">
+      Fait avec Astro.
+    </p>
+  </div>
+ 
+</footer>

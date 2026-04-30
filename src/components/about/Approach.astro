@@ -1,0 +1,73 @@
+---
+const facts = [
+  "Spécialisé outils métier complexes — pas des sites vitrines",
+  "Intervention sur toute la France en remote",
+  "Interlocuteur unique du brief à la livraison",
+  "Code documenté et maintenable, qui vous appartient",
+  "Premiers échanges gratuits, sans engagement",
+]
+ 
+const stack = [
+  { name: 'Ruby on Rails',              desc: 'Backend principal',   color: '#C84B11' },
+  { name: 'Hotwire · Turbo · Stimulus', desc: 'Hypermedia',          color: '#F2A122' },
+  { name: 'HTMX',                       desc: 'HTML-first',          color: '#F2A122' },
+  { name: 'Three.js · WebGL',           desc: 'Expériences 3D',      color: '#2D6A4F' },
+  { name: 'PostgreSQL · Redis',         desc: 'Données',             color: '#7A5C40' },
+  { name: 'Kamal · GitHub Actions',     desc: 'Infra & CI/CD',       color: '#7A5C40' },
+]
+---
+ 
+<section class="section">
+  <div class="container mx-auto">
+    <span class="section-label">Mon approche</span>
+    
+    <div class="grid grid-cols-1 gap-8 mt-4 sm:grid-cols-2 sm:items-start">
+  
+      <!-- Texte -->
+      <div>
+        <h2 class="section-h2">
+          Pas d'intermédiaire<br>entre vous et le code.
+        </h2>
+        <p class="text-sm leading-loose mb-3"
+          style="color: var(--color-macarel-schiste);">
+          Vous parlez directement au développeur qui construit votre produit.
+          Pas d'account manager, pas de chef de projet qui relaie les briefs.
+          Moins de friction, plus de précision.
+        </p>
+        <p class="text-sm leading-loose mb-5"
+          style="color: var(--color-macarel-schiste);">
+          Je m'engage sur des projets que je choisis — ce qui garantit
+          une vraie implication, pas une exécution mécanique.
+        </p>
+  
+        <!-- Facts -->
+        <div class="flex flex-col gap-1.5">
+          {facts.map((fact) => (
+            <div class="fact-item">
+              <span class="fact-dot"></span>
+              {fact}
+            </div>
+          ))}
+        </div>
+      </div>
+  
+      <!-- Stack -->
+      <div>
+        <h3 class="text-label mb-3">La stack</h3>
+        <div class="flex flex-col gap-1.5">
+          {stack.map((item) => (
+            <div class="craft-stack-item">
+              <span
+                class="craft-stack-dot"
+                style={`background-color: ${item.color};`}
+              ></span>
+              <span class="craft-stack-name">{item.name}</span>
+              <span class="craft-stack-desc">{item.desc}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</section>

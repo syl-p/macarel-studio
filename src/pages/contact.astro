@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import Hero from '../components/contact/Hero.astro'
+import Form from '../components/contact/Form.astro'
+import Info from '../components/contact/Info.astro'
+import Faq from '../components/contact/Faq.astro'
+---
+<Layout
+  title="Contact — Macarel Studio"
+  description="Parlons de votre projet. Premier échange gratuit, réponse sous 48h. Basé à Carcassonne, intervention sur toute la France."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 border-b border-thin"
+        style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);">
+        <Form />
+        <Info />
+      </div>
+    </div>
+    <Faq />
+  </main>
+  <Footer />
+</Layout>

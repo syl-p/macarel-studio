@@ -1,0 +1,36 @@
+---
+import Cta from './Cta.astro';
+
+const tagColor = 'text-macarel-argile';
+---
+
+<section
+  class="px-10 pt-16 pb-14"
+  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+>
+  <div class="container mx-auto">
+    <span class="section-label">Blog</span>
+    
+    <h1 class="text-display mt-4 mb-5 max-w-prose" style="color: var(--color-macarel-encre);">
+      Du code, des idées,<br>
+      <em class="not-italic" style="color: var(--color-macarel-argile);">
+        sans filtre.
+      </em>
+    </h1>
+    
+    <p
+      class="text-md leading-loose max-w-content"
+      style="color: var(--color-macarel-schiste);"
+    >
+      Notes techniques, retours d'expérience, et réflexions sur le métier.
+      Écrites depuis Carcassonne, pensées pour celles et ceux qui codent.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-2">
+      <a href="/tags/astro" class="hero-tag">astro</a>
+      <a href="/tags/rails" class="hero-tag">rails</a>
+      <a href="/tags/hotwire" class="hero-tag">hotwire</a>
+      <a href="/tags/craft" class="hero-tag">craft</a>
+    </div>
+  </div>
+</section>

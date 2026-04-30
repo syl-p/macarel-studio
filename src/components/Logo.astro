@@ -1,0 +1,33 @@
+---
+interface Props {
+  size?: number
+  variant?: 'dark' | 'light' | 'accent'
+}
+
+const { size = 28, variant = 'dark' } = Astro.props
+
+const styles = {
+  dark:   { bg: '#1A0A00', fill: '#F2A122' },
+  light:  { bg: '#FDF6EE', fill: '#C84B11' },
+  accent: { bg: '#C84B11', fill: '#FDF6EE' },
+}
+const s = styles[variant]
+---
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 38 38"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="Macarel Studio"
+>
+  <rect width="38" height="38" rx="9" fill={s.bg} />
+  <text
+    x="10"
+    y="28"
+    font-family="Georgia, serif"
+    font-size="22"
+    font-weight="700"
+    fill={s.fill}
+  >!</text>
+</svg>

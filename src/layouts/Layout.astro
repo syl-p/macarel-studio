@@ -1,23 +1,27 @@
+---
+import '../styles/global.css'
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Macarel Studio — Artisan Rails, Carcassonne',
+  description = 'Je conçois des outils métier sur mesure, des SaaS et des plateformes web avec Rails et Hotwire. Basé à Carcassonne, Occitanie.',
+} = Astro.props
+---
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
-	<body>
+	<body class="bg-macarel-calcaire text-macarel-encre antialiased">
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

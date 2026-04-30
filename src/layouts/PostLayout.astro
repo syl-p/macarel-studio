@@ -1,0 +1,49 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Layout from "./Layout.astro";
+import '../styles/global.css';
+
+const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString('fr-FR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
+---
+
+<Layout title={`${frontmatter.title} — Blog Macarel Studio`}>
+    <Nav/>
+    <main>
+        <article class="max-w-prose mx-auto pt-16 pb-14">
+            <a href="/blog" class="inline-flex items-center gap-1.5 text-sm mb-8" style="color: var(--color-macarel-schiste);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+                Retour au blog
+            </a>
+            
+            <div class="flex flex-wrap gap-1.5 mb-6">
+                {frontmatter.tags?.map((tag: string) => (
+                    <a href={`/tags/${tag}`} class="badge-argile hover:opacity-80 transition-opacity">
+                        {tag}
+                    </a>
+                ))}
+            </div>
+            
+            <h1 class="text-display" style="color: var(--color-macarel-encre);">
+                {frontmatter.title}
+            </h1>
+            
+            <p class="text-sm mb-8" style="color: var(--color-macarel-garrigue);">
+                {formattedDate} · {frontmatter.author}
+            </p>
+            
+            <div class="prose" style="color: var(--color-macarel-encre);">
+                <slot />
+            </div>
+        </article>
+    </main>
+    <Footer />
+</Layout>

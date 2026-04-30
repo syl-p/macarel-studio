@@ -1,0 +1,109 @@
+---
+const faqs = [
+  {
+    q: "Mon projet n'est qu'une idée, c'est trop tôt pour vous contacter ?",
+    a: "Non — c'est même le meilleur moment. Partir d'une idée brute permet de cadrer correctement l'architecture dès le début et d'éviter les décisions coûteuses à refaire plus tard.",
+  },
+  {
+    q: "Vous travaillez uniquement en remote ?",
+    a: "Principalement oui. Je suis basé à Carcassonne et j'interviens sur toute la France en remote. Des déplacements sont possibles en Occitanie pour les réunions de cadrage ou les ateliers.",
+  },
+  {
+    q: "Pourquoi Rails et pas React/Node comme tout le monde ?",
+    a: "Rails + Hotwire permet de livrer des outils métier robustes en un tiers du temps qu'il faudrait avec une stack SPA classique. Moins de code, moins de surface d'attaque, plus facile à maintenir. C'est un choix technique délibéré, pas un héritage.",
+  },
+  {
+    q: "Combien de temps pour livrer un outil métier ?",
+    a: "Ça dépend du périmètre. Un outil métier simple (CRUD, permissions, exports) : 4 à 8 semaines. Un SaaS complet avec billing et onboarding : 8 à 16 semaines. On définit ensemble un périmètre réaliste avant de démarrer.",
+  },
+  {
+    q: "Que se passe-t-il après la livraison ?",
+    a: "Vous repartez avec le code source, la documentation, le pipeline CI/CD et le déploiement en place. Je propose aussi un accompagnement post-livraison pour les évolutions et la maintenance.",
+  },
+  {
+    q: "Vous travaillez seul ou avec une équipe ?",
+    a: "Je travaille principalement seul — c'est une garantie de cohérence et d'interlocuteur unique. Sur les projets qui le nécessitent, je m'associe ponctuellement avec des profils complémentaires de confiance.",
+  },
+]
+---
+ 
+<section class="section">
+    <div class="container mx-auto">
+    <span class="section-label">Questions fréquentes</span>
+    <h2 class="section-h2">Ce qu'on me demande souvent</h2>
+    
+    <div class="flex flex-col mt-4">
+        {faqs.map((faq, i) => (
+        <details
+            class="faq-item group"
+            data-index={i}
+        >
+            <summary class="faq-summary">
+            <span>{faq.q}</span>
+            <svg
+                class="faq-chevron"
+                width="16" height="16" viewBox="0 0 16 16" fill="none"
+            >
+                <path d="M4 6l4 4 4-4"
+                    stroke="currentColor" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </summary>
+            <p class="faq-answer">{faq.a}</p>
+        </details>
+        ))}
+    </div>
+    </div>
+</section>
+ 
+<style>
+  .faq-item {
+    border-bottom: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);
+  }
+ 
+  .faq-item:first-child {
+    border-top: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);
+  }
+ 
+  .faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-macarel-encre);
+    transition: color 200ms ease;
+  }
+ 
+  .faq-summary::-webkit-details-marker { display: none; }
+ 
+  .faq-summary:hover {
+    color: var(--color-macarel-argile);
+  }
+ 
+  .faq-chevron {
+    color: var(--color-macarel-schiste);
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+  }
+ 
+  details[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+ 
+  details[open] .faq-summary {
+    color: var(--color-macarel-argile);
+  }
+ 
+  .faq-answer {
+    font-size: var(--text-sm);
+    color: var(--color-macarel-schiste);
+    line-height: 1.65;
+    padding-bottom: 16px;
+    max-width: 580px;
+  }
+</style>

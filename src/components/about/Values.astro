@@ -1,0 +1,43 @@
+---
+const values = [
+  {
+    color: '#C84B11',
+    title: 'Technique d\'abord',
+    body: "Je conçois des systèmes, pas des sites. Chaque décision d'architecture est justifiée, chaque compromis assumé et expliqué — pas imposé.",
+  },
+  {
+    color: '#F2A122',
+    title: 'Hypermedia par conviction',
+    body: "Rails + Hotwire + HTMX, c'est un choix délibéré. Moins de JavaScript, des interfaces plus robustes, un code que vous pouvez relire dans deux ans.",
+  },
+  {
+    color: '#2D6A4F',
+    title: 'Ancrage et portée',
+    body: "Basé à Carcassonne, je travaille sur toute la France en remote. Le territoire est une signature, une façon d'être — pas une limite.",
+  },
+]
+---
+ 
+<section class="section">
+    <div class="container mx-auto">
+        <span class="section-label">Ce qui me guide</span>
+        <div class="grid grid-cols-1 gap-2 mt-4 sm:grid-cols-3">
+            {values.map((v) => (
+            <div class="card">
+                <div
+                class="w-2 h-2 rounded-full mb-3"
+                style={`background-color: ${v.color};`}
+                ></div>
+                <h3 class="text-base font-medium mb-1.5"
+                    style="color: var(--color-macarel-encre);">
+                {v.title}
+                </h3>
+                <p class="text-sm leading-relaxed"
+                style="color: var(--color-macarel-schiste);">
+                {v.body}
+                </p>
+            </div>
+            ))}
+        </div>
+    </div>
+</section>

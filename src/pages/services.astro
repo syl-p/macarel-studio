@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import Hero from '../components/services/Hero.astro'
+import Detail from '../components/services/Detail.astro'
+import Process from '../components/services/Process.astro'
+import Cta from '../components/Cta.astro'
+ 
+const services = Object.values(import.meta.glob('./services/*.md', { eager: true }))
+  .sort((a, b) => a.frontmatter.number - b.frontmatter.number)
+---
+ 
+<Layout
+  title="Services — Macarel Studio"
+  description="Outils métier sur mesure, SaaS et accompagnement technique avec Rails et Hotwire."
+>
+  <Nav />
+  <main>
+    <Hero />
+    {services.map((service) => (
+      <Detail service={service} />
+    ))}
+    <Process />
+    <Cta
+      title="Un projet qui correspond ?"
+      subtitle="Premier échange gratuit · Réponse sous 48h · Carcassonne"
+      cta="Parler du projet"
+      href="/contact"
+    />
+  </main>
+  <Footer />
+</Layout>

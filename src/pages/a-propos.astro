@@ -1,0 +1,37 @@
+---
+import Approach from "../components/about/Approach.astro";
+import Clients from "../components/about/Clients.astro";
+import Hero from "../components/about/Hero.astro";
+import Craft from "../components/about/Craft.astro";
+import Story from "../components/about/Story.astro";
+import Values from "../components/about/Values.astro";
+import Cta from "../components/Cta.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+import Bassist from "../components/about/Bassist.astro";
+import Manifesto from "../components/about/Manifesto.astro";
+
+---
+<Layout
+  title="À propos — Macarel Studio"
+  description="Artisan Rails basé à Carcassonne. Je conçois des outils métier sur mesure avec Rails, Hotwire et HTMX — du brief à la prod, seul interlocuteur."
+>
+  <Nav />
+  <main>
+    <Hero />
+    <Story/>
+    <Craft />
+    <Bassist />
+    <Manifesto />
+
+    <!-- <Values />
+    <Approach />
+    <Clients /> -->
+    <!-- <Cta
+      title="Un projet à construire ?"
+      subtitle="Premier échange gratuit · Réponse sous 48h · Basé à Carcassonne"
+    /> -->
+  </main>
+  <Footer />
+</Layout>

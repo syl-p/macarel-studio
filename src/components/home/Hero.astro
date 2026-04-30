@@ -1,0 +1,50 @@
+---
+// Pas de props pour l'instant — contenu statique
+---
+
+<section class="hero-dark py-14 border-b border-thin border-macarel-garrigue/30">
+  <div class="container mx-auto">
+    <!-- Eyebrow -->
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot animate-pulse"></span>
+      <span class="hero-eyebrow-text">Artisan Rails · Carcassonne, Occitanie</span>
+    </div>
+
+    <!-- H1 -->
+    <h1 class="text-display text-macarel-calcaire mb-5 max-w-prose">
+      Des outils métier<br>
+      qui font dire
+      <em class="not-italic text-macarel-soleil">"boudiou... macarel".</em>
+    </h1>
+
+    <!-- Corps -->
+    <p class="text-md text-macarel-miel/80 leading-loose max-w-content mb-7">
+      Bien plus que des applications web, je conçois des outils qui travaillent pour vous ! 
+      Du Brief à la livraison, je m'engage à créer des solutions sur-mesure, robustes et évolutives, qui vous font gagner du temps et de l'efficacité au quotidien.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex gap-2.5 flex-wrap mb-7">
+      <a href="/contact" class="btn-primary">
+        Parler du projet
+      </a>
+      <a href="/projets" class="btn-secondary-dark">
+        Voir les réalisations
+      </a>
+    </div>
+
+    <!-- Stack tags -->
+    <div class="flex flex-wrap gap-1.5">
+      {[
+        'Ruby on Rails',
+        'Hotwire · Turbo',
+        'Inertia.js · React',
+        'Three.js · WebGL',
+        'PostgreSQL · Redis',
+        'Kamal · CI/CD',
+      ].map((tag) => (
+        <span class="hero-tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+</section>

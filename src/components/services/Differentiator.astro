@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  color: string;
+}
+
+const { title, body, color } = Astro.props;
+---
+
+<div class="flex gap-4">
+  <div
+    class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
+    style={`background-color: ${color};`}
+  ></div>
+  <div>
+    <h3 class="text-base font-medium mb-1" style="color: var(--color-macarel-encre);">
+      {title}
+    </h3>
+    <p class="text-sm leading-relaxed" style="color: var(--color-macarel-schiste);">
+      {body}
+    </p>
+  </div>
+</div>

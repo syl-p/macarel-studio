@@ -1,0 +1,48 @@
+---
+import Logo from './Logo.astro'
+
+const links = [
+  { href: '/a-propos',  label: 'À propos'  },
+  { href: '/services',   label: 'Services'   },
+  { href: '/posts',  label: 'Blog'  },
+  { href: '/contact',   label: 'Contact'   },
+]
+
+const currentPath = Astro.url.pathname
+---
+<nav class="px-7 py-3.5 border-b border-thin border-macarel-pierre/40 bg-macarel-calcaire sticky top-0 z-50">
+  <div class="flex justify-between items-center container mx-auto">
+    <a href="/" class="flex items-center gap-2.5 no-underline">
+        <Logo size={28} variant="dark" />
+        <span class="text-md font-medium tracking-wide text-macarel-encre">
+          Macarel
+          <span class="text-[9px] tracking-[0.16em] text-macarel-schiste ml-1 align-middle uppercase">
+            Studio
+          </span>
+        </span>
+      </a>
+
+      <div class="flex gap-6">
+        {links.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'text-sm transition-colors duration-200',
+              currentPath === href
+                ? 'text-macarel-encre font-medium'
+                : 'text-macarel-schiste hover:text-macarel-encre'
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+
+      <a
+        href="/contact"
+        class="text-xs font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
+      >
+        Parler du projet
+      </a>
+  </div>
+</nav>

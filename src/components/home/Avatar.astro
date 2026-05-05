@@ -1,0 +1,27 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  src?: string
+}
+
+const { size = 'md', src } = Astro.props
+
+const sizes = {
+  sm: 'clamp(1.25rem, 3vw, 1.75rem)',
+  md: 'clamp(1.875rem, 4.5vw, 2.75rem)',
+  lg: 'clamp(2.5rem, 6vw, 3.5rem)',
+  xl: 'clamp(3.5rem, 8vw, 5rem)',
+}
+const avatarSize = sizes[size]
+---
+
+<div class="shrink-0 rounded-full bg-macarel-argile/20 flex items-center justify-center overflow-hidden" style={`width: ${avatarSize}; height: ${avatarSize};`}>
+    {src ? (
+        <img src={src} alt="Sylvain Pastor" class="w-full h-full object-cover" />
+    ) : (
+        <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" viewBox="0 0 24 24" fill="none" stroke="var(--color-macarel-soleil)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+        </svg>
+    )}
+</div>

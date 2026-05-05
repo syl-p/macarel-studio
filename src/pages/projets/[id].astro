@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Nav from '../../components/Nav.astro'
+import ProjectDetail from '../../components/projects/ProjectDetail.astro'
+import Cta from '../../components/Cta.astro'
+import Footer from '../../components/Footer.astro'
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projets')
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props:  { project },
+  }))
+}
+
+const { project } = Astro.props
+const { Content }  = await render(project)
+---
+
+<Layout
+  title={`${project.data.title} — Macarel Studio`}
+  description={project.data.tagline}
+>
+  <Nav />
+  <main>
+    <ProjectDetail project={project}>
+      <Content />
+    </ProjectDetail>
+    <Cta
+      title="Un projet similaire ?"
+      subtitle="Premier échange gratuit · Réponse sous 48h"
+      cta="Parler du projet"
+      href="/contact"
+    />
+  </main>
+  <Footer />
+</Layout>

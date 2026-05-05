@@ -1,14 +1,73 @@
 ---
-import Cta from "../../components/Cta.astro";
-import Footer from "../../components/Footer.astro";
-import Nav from "../../components/Nav.astro";
-import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import Nav from '../../components/Nav.astro'
+import ProjectsHero from '../../components/projects/ProjectsHero.astro'
+import ProjectCard from '../../components/projects/ProjectCard.astro'
+import Footer from '../../components/Footer.astro'
+import Cta from '../../components/Cta.astro'
+
+const allProjects = await getCollection('projets')
+
+const sorted = allProjects.sort((a, b) => {
+  if (a.data.featured && !b.data.featured) return -1
+  if (!a.data.featured && b.data.featured) return 1
+  return b.data.year - a.data.year
+})
 ---
 
-<Layout title="Projets — Macarel Studio">
-	<Nav />
-	<main>
-		<Cta />
-	</main>
-	<Footer />
+<Layout
+  title="Projets — Macarel Studio"
+  description="Outils métier, SaaS et plateformes web conçus avec Rails et Hotwire."
+>
+  <Nav />
+  <main>
+    <ProjectsHero count={sorted.length} />
+    <section
+      class="py-14 border-b border-thin"
+      style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+    >
+      <div class="container mx-auto">
+        {sorted.length > 0 ? (
+            <div class="flex flex-col gap-3">
+            {sorted.map((project) => (
+                <ProjectCard project={project} />
+            ))}
+            </div>
+        ) : (
+            <div class="py-20 flex flex-col items-center gap-4 text-center">
+            <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center"
+                style="background-color: var(--color-macarel-craft);
+                    border: 0.5px solid var(--color-macarel-pierre);"
+            >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="2" width="16" height="16" rx="3"
+                        stroke="var(--color-macarel-schiste)" stroke-width="1.2"/>
+                <path d="M6 7h8M6 10h5M6 13h6"
+                        stroke="var(--color-macarel-schiste)" stroke-width="1.1"
+                        stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div>
+                <p class="text-base font-medium" style="color: var(--color-macarel-encre);">
+                Projets en cours de documentation
+                </p>
+                <p class="text-sm mt-1" style="color: var(--color-macarel-schiste);">
+                Revenez bientôt — ou contactez-moi directement.
+                </p>
+            </div>
+            <a href="/contact" class="btn-primary mt-2">Parler d'un projet</a>
+            </div>
+        )}
+      </div>
+    </section>
+    <Cta
+      title="Votre projet pourrait être ici."
+      subtitle="Premier échange gratuit · Réponse sous 48h"
+      cta="Parler du projet"
+      href="/contact"
+    />
+  </main>
+  <Footer />
 </Layout>

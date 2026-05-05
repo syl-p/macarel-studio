@@ -1,0 +1,122 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  project: CollectionEntry<'projets'>
+}
+
+const { project } = Astro.props
+const { title, tagline, client, sector, year, status, color, stack, tags } = project.data
+
+const statusColors = {
+  'livré':       { bg: '#E8F5EE', text: '#2D6A4F' },
+  'en cours':    { bg: '#FEF3E2', text: '#C84B11' },
+  'maintenance': { bg: '#FDF6EE', text: '#7A5C40' },
+}
+const sc = statusColors[status]
+---
+
+<!-- Hero -->
+<section
+  class="px-10 pt-16 pb-14 border-b border-thin"
+  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+>
+  <div class="container mx-auto">
+    <!-- Breadcrumb -->
+    <a
+      href="/projets"
+      class="inline-flex items-center gap-1.5 text-xs no-underline mb-10
+            transition-colors duration-200"
+      style="color: var(--color-macarel-schiste);"
+    >
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.3"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Tous les projets
+    </a>
+
+    <!-- Meta -->
+    <div class="flex flex-wrap items-center gap-2.5 mb-6">
+      <span
+        class="text-xs font-medium px-2.5 py-1 rounded-md"
+        style={`background-color: ${sc.bg}; color: ${sc.text};`}
+      >
+        {status}
+      </span>
+      {sector && (
+        <>
+          <span style="color: var(--color-macarel-pierre);">·</span>
+          <span class="text-xs" style="color: var(--color-macarel-schiste);">{sector}</span>
+        </>
+      )}
+      {client && (
+        <>
+          <span style="color: var(--color-macarel-pierre);">·</span>
+          <span class="text-xs" style="color: var(--color-macarel-schiste);">{client}</span>
+        </>
+      )}
+      <span style="color: var(--color-macarel-pierre);">·</span>
+      <span class="text-xs" style="color: var(--color-macarel-schiste);">{year}</span>
+    </div>
+
+    <!-- Titre + tagline -->
+    <h1 class="text-display mb-4" style="color: var(--color-macarel-encre);">
+      {title}
+    </h1>
+    <p class="text-xl font-medium" style={`color: ${color};`}>
+      {tagline}
+    </p>
+  </div>
+</section>
+
+<!-- Corps : contenu .md + sidebar -->
+<section
+  class="px-10 py-14 border-b border-thin"
+  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+>
+  <div class="container mx-auto grid grid-cols-1 gap-14 sm:grid-cols-[1fr_280px] sm:items-start">
+
+    <!-- Contenu du .md rendu -->
+    <div class="project-content prose">
+      <slot />
+    </div>
+
+    <!-- Sidebar -->
+    <div class="flex flex-col gap-6">
+
+      <!-- Stack -->
+      <div>
+        <span class="text-label" style="display: block; margin-bottom: 14px;">
+          Stack
+        </span>
+        <div class="flex flex-col gap-2">
+          {stack.map((tech) => (
+            <div class="craft-stack-item">
+              <span
+                class="craft-stack-dot"
+                style={`background-color: ${color};`}
+              ></span>
+              <span class="craft-stack-name">{tech}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tags -->
+      {tags.length > 0 && (
+        <div>
+          <span class="text-label" style="display: block; margin-bottom: 14px;">
+            Catégories
+          </span>
+          <div class="flex flex-wrap gap-1.5">
+            {tags.map((tag) => (
+              <span class="badge-argile">{tag}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </div>
+</section>

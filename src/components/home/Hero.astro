@@ -1,4 +1,5 @@
 ---
+import Avatar from './Avatar.astro'
 // Pas de props pour l'instant — contenu statique
 ---
 
@@ -7,19 +8,25 @@
     <!-- Eyebrow -->
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot animate-pulse"></span>
-      <span class="hero-eyebrow-text">Artisan Rails · Carcassonne, Occitanie</span>
+      <span class="hero-eyebrow-text">Actuellement Disponible · <b>à Carcassonne</b>, Occitanie</span>
     </div>
 
-    <!-- H1 -->
-    <h1 class="text-display text-macarel-calcaire mb-5 max-w-prose">
-      Des outils métier<br>
-      qui font dire
-      <em class="not-italic text-macarel-soleil">"boudiou... macarel".</em>
-    </h1>
+    <!-- H1 + Avatar -->
+    <div class="flex align-middle items-center gap-4 mb-5">
+      <Avatar size="xl" />
+
+      <h1 class="text-display text-macarel-calcaire max-w-prose">
+        Sylvain Pastor<br>
+        Développeur web
+        <em class="not-italic text-macarel-soleil">
+         Freelance.
+        </em>
+      </h1>
+    </div>
 
     <!-- Corps -->
-    <p class="text-md text-macarel-miel/80 leading-loose max-w-content mb-7">
-      Bien plus que des applications web, je conçois des outils qui travaillent pour vous ! 
+    <p class="text-macarel-miel/80 leading-loose mb-7">
+      Bien plus que des applications web, je conçois des outils qui travaillent pour vous ! <br>
       Du Brief à la livraison, je m'engage à créer des solutions sur-mesure, robustes et évolutives, qui vous font gagner du temps et de l'efficacité au quotidien.
     </p>
 
@@ -34,7 +41,7 @@
     </div>
 
     <!-- Stack tags -->
-    <div class="flex flex-wrap gap-1.5">
+    <!-- <div class="flex flex-wrap gap-1.5">
       {[
         'Ruby on Rails',
         'Hotwire · Turbo',
@@ -45,6 +52,6 @@
       ].map((tag) => (
         <span class="hero-tag">{tag}</span>
       ))}
-    </div>
+    </div> -->
   </div>
 </section>

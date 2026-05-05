@@ -3,7 +3,8 @@ import Logo from './Logo.astro'
 
 const links = [
   { href: '/a-propos',  label: 'À propos'  },
-  { href: '/services',   label: 'Services'   },
+  // { href: '/services',   label: 'Services'   },
+  { href: '/projets',   label: 'Projets'   },
   { href: '/posts',  label: 'Blog'  },
   { href: '/contact',   label: 'Contact'   },
 ]
@@ -27,7 +28,7 @@ const currentPath = Astro.url.pathname
           <a
             href={href}
             class:list={[
-              'text-sm transition-colors duration-200',
+              'text-base transition-colors duration-200',
               currentPath === href
                 ? 'text-macarel-encre font-medium'
                 : 'text-macarel-schiste hover:text-macarel-encre'
@@ -40,7 +41,7 @@ const currentPath = Astro.url.pathname
 
       <a
         href="/contact"
-        class="text-xs font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
+        class="text-base font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
       >
         Parler du projet
       </a>

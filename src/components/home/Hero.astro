@@ -5,10 +5,23 @@ import Avatar from './Avatar.astro'
 
 <section class="hero-dark py-14 border-b border-thin border-macarel-garrigue/30">
   <div class="container mx-auto">
-    <!-- Eyebrow -->
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot animate-pulse"></span>
-      <span class="hero-eyebrow-text">Actuellement Disponible · <b>à Carcassonne</b>, Occitanie</span>
+    <!-- Disponibilité -->
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5"
+      style="background-color: rgba(45,106,79,0.15);
+              border: 0.5px solid rgba(45,106,79,0.3);"
+    >
+      <span
+        class="w-2 h-2 rounded-full flex-shrink-0 animate-pulse"
+        style="background-color: #2D6A4F;
+                box-shadow: 0 0 0 2px rgba(45,106,79,0.25);"
+      ></span>
+      <span
+        class="text-sm font-medium"
+        style="color: #2D6A4F; letter-spacing: 0.04em;"
+      >
+        Disponible pour de nouveaux projets
+      </span>
     </div>
 
     <!-- H1 + Avatar -->
@@ -26,8 +39,8 @@ import Avatar from './Avatar.astro'
 
     <!-- Corps -->
     <p class="text-macarel-miel/80 leading-loose mb-7">
-      Bien plus que des applications web, je conçois des outils qui travaillent pour vous ! <br>
-      Du Brief à la livraison, je m'engage à créer des solutions sur-mesure, robustes et évolutives, qui vous font gagner du temps et de l'efficacité au quotidien.
+      Je conçois des outils métier sur mesure, des SaaS et des plateformes web avec Rails et Hotwire. <br>
+      Un <u>collaborateur</u> pour les PME et startups qui veulent un développeur impliqué, pas un prestataire qui livre et disparaît.
     </p>
 
     <!-- CTAs -->
@@ -39,19 +52,5 @@ import Avatar from './Avatar.astro'
         Voir les réalisations
       </a>
     </div>
-
-    <!-- Stack tags -->
-    <!-- <div class="flex flex-wrap gap-1.5">
-      {[
-        'Ruby on Rails',
-        'Hotwire · Turbo',
-        'Inertia.js · React',
-        'Three.js · WebGL',
-        'PostgreSQL · Redis',
-        'Kamal · CI/CD',
-      ].map((tag) => (
-        <span class="hero-tag">{tag}</span>
-      ))}
-    </div> -->
   </div>
 </section>

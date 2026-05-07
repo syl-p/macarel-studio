@@ -1,0 +1,102 @@
+---
+import Avatar from "./Avatar.astro"
+
+const points = [
+  {
+    color: '#C84B11',
+    strong: 'Plus de 10 ans de développement web',
+    text: '— De nombreux projets déjà livrés, dans différents secteurs. Une expérience qui me permet de comprendre rapidement les enjeux métier et de proposer des solutions adaptées.',
+  },
+  {
+    color: '#F2A122',
+    strong: 'Monolithe et Hypermedia privilégiés',
+    text: '— Le back end Ruby on Rails comme unique source de vérité, Hotwire Turbo & Stimulus pour des interfaces réactive et plus robustes.',
+  },
+  {
+    color: '#2D6A4F',
+    strong: 'Un seul interlocuteur',
+    text: '— du brief à la livraison. Une seule personne pour ne perdre aucune information en route, et garantir une vision cohérente du projet.',
+  },
+]
+---
+ 
+<section style="background-color: var(--color-macarel-craft);">
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 items-center">
+ 
+    <!-- Colonne gauche — texte + signature -->
+    <div
+      class="px-10 py-14">
+      <span
+        class="section-label"
+        style="color: var(--color-macarel-garrigue); opacity: 0.7;"
+      >
+        Pourquoi moi
+      </span>
+ 
+      <h2 class="section-h2 mt-1 mb-5" style="color: var(--color-macarel-nuit);">
+        La vocation de porter votre projet.
+      </h2>
+ 
+      <p
+        class="text-base leading-loose mb-4"
+        style="color: var(--color-macarel-garrigue);"
+      >
+        Un bassiste ne joue pas pour briller — il joue pour que les autres
+        puissent briller. Il pose la fondation, tient le groove, rend
+        l'ensemble cohérent.
+      </p>
+ 
+      <p
+        class="text-base leading-loose"
+        style="color: var(--color-macarel-garrigue);"
+      >
+        C'est exactement comme ça que j'aborde le développement.
+        Je suis là pour porter votre vision, pas pour imposer la mienne.
+      </p>
+ 
+      <!-- Signature -->
+      <div
+        class="flex items-center gap-3 mt-8 pt-6"
+      >
+        <!-- Avatar initiale — remplacer par <img> quand photo dispo -->
+        <Avatar size="md" />
+        <div>
+          <p
+            class="text-base font-medium"
+            style="color: var(--color-macarel-nuit);"
+          >
+            Sylvain
+          </p>
+          <p
+            class="text-sm mt-0.5"
+            style="color: var(--color-macarel-schiste);"
+          >
+            Développeur web · Ruby on Rails · Carcassonne
+          </p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Colonne droite — points clés -->
+    <div class="flex flex-col gap-1.5">
+      {points.map((p) => (
+        <div class="craft-stack-item">
+          <span
+            class="craft-stack-dot"
+            style={`background-color: ${p.color};`}
+          ></span>
+          <span>
+            <strong
+              class="craft-stack-name"
+              style="color: var(--color-macarel-encre);"
+            >
+              {p.strong}
+            </strong>
+            <span class="craft-stack-desc">{p.text}</span>
+          </span>
+        </div>
+      ))}
+    </div>
+ 
+  </div>
+</section>

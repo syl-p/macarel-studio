@@ -6,24 +6,32 @@ interface Props {
 }
 
 const { project } = Astro.props
-const { title, tagline, sector, year, status, featured, stack } = project.data
+const { title, tagline, sector, year, status, featured, stack, featuredImage } = project.data
 
 const statusColors = {
   'livré':       { bg: '#E8F5EE', text: '#2D6A4F' },
   'en cours':    { bg: '#FEF3E2', text: '#C84B11' },
   'maintenance': { bg: '#FDF6EE', text: '#7A5C40' },
 }
-const sc = statusColors[status]
+const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
 ---
 
 <a href={`/projets/${project.id}`} class="block no-underline group">
   <div
-    class="card grid grid-cols-1 gap-5 transition-all duration-200
-           sm:grid-cols-[1fr_auto] sm:items-center"
-    style="padding: 24px 28px;"
+    class="relative overflow-hidden rounded-xl min-h-[300px] flex items-end transition-shadow duration-200"
+    style={`background-color: var(--color-macarel-nuit);
+            ${featuredImage ? `background-image: url(${featuredImage});` : ''}
+            background-size: cover;
+            background-position: center;`}
   >
-    <div>
+    <!-- Gradient overlay -->
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to top, rgba(26,10,0,0.92) 0%, rgba(26,10,0,0.4) 50%, rgba(26,10,0,0.2) 100%);"
+    ></div>
 
+    <!-- Content -->
+    <div class="relative z-10 w-full" style="padding: 32px 28px;">
       <!-- Meta -->
       <div class="flex flex-wrap items-center gap-2.5 mb-3">
         <span
@@ -35,11 +43,11 @@ const sc = statusColors[status]
         {sector && (
           <>
             <span style="color: var(--color-macarel-pierre);">·</span>
-            <span class="text-xs" style="color: var(--color-macarel-schiste);">{sector}</span>
+            <span class="text-xs" style="color: var(--color-macarel-miel);">{sector}</span>
           </>
         )}
         <span style="color: var(--color-macarel-pierre);">·</span>
-        <span class="text-xs" style="color: var(--color-macarel-schiste);">{year}</span>
+        <span class="text-xs" style="color: var(--color-macarel-miel);">{year}</span>
         {featured && (
           <span
             class="text-xs font-medium px-2.5 py-1 rounded-md"
@@ -54,42 +62,23 @@ const sc = statusColors[status]
       <!-- Titre + tagline -->
       <h2
         class="text-xl font-medium tracking-tight mb-1.5"
-        style="color: var(--color-macarel-encre);"
+        style="color: var(--color-macarel-calcaire);"
       >
         {title}
       </h2>
-      <p class="text-sm leading-relaxed" style="color: var(--color-macarel-schiste);">
+      <p class="text-sm leading-relaxed" style="color: var(--color-macarel-miel);">
         {tagline}
       </p>
 
       <!-- Stack -->
       <div class="flex flex-wrap gap-1.5 mt-4">
-        {stack.slice(0, 4).map((tech) => (
+        {stack && stack.slice(0, 4).map((tech) => (
           <span class="hero-tag">{tech}</span>
         ))}
-        {stack.length > 4 && (
+        {stack && stack.length > 4 && (
           <span class="hero-tag">+{stack.length - 4}</span>
         )}
       </div>
-
     </div>
-
-    <!-- Flèche -->
-    <div
-      class="hidden sm:flex w-10 h-10 rounded-full items-center justify-center
-             flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1"
-      style="border: 0.5px solid var(--color-macarel-pierre);"
-    >
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-        <path
-          d="M3 7h8M8 4l3 3-3 3"
-          stroke="var(--color-macarel-schiste)"
-          stroke-width="1.3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </div>
-
   </div>
 </a>

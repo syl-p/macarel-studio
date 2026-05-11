@@ -9,7 +9,7 @@ const timeline = [
   {
     period: '10 ans de pratique',
     title: 'L\'artisanat avant tout',
-    body: "Une décennie à affiner la même conviction : un bon outil se juge à ce qu'il permet, pas à la complexité de ce qu'il cache dessous. Rails + Hotwire, c'est le résultat de cette réflexion.",
+    body: "Une décennie à affiner la même conviction : un bon outil se juge à ce qu'il permet, pas à la complexité de ce qu'il cache dessous.",
     color: '#F2A122',
   },
   {
@@ -21,10 +21,7 @@ const timeline = [
 ]
 ---
  
-<section
-  class="px-10 py-14 border-b border-thin"
-  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
->
+<section class="section py-14">
   <div class="container mx-auto">
     <span class="section-label">Le parcours</span>
     <h2 class="section-h2 mt-1 mb-10">Comment j'en suis arrivé là.</h2>
@@ -35,32 +32,33 @@ const timeline = [
             style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 40%, transparent);"
         >
             <!-- Période -->
-            <div class="flex items-start gap-3 sm:flex-col sm:gap-2">
-            <div
-                class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
-                style={`background-color: ${item.color};`}
-            ></div>
-            <span
-                class="text-xs font-medium"
-                style="color: var(--color-macarel-schiste);"
-            >
-                {item.period}
-            </span>
+            <div class="flex items-center gap-3 sm:flex-col sm:gap-2">
+              <div
+                  class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                  style={`background-color: ${item.color};`}
+              ></div>
+              <span
+                  class="text-sm font-medium"
+                  style="color: var(--color-macarel-schiste);"
+              >
+                  {item.period}
+              </span>
             </div>
+
             <!-- Contenu -->
             <div>
-            <h3
-                class="text-base font-medium mb-2"
-                style="color: var(--color-macarel-encre);"
-            >
-                {item.title}
-            </h3>
-            <p
-                class="text-sm leading-loose"
-                style="color: var(--color-macarel-schiste);"
-            >
-                {item.body}
-            </p>
+              <h3
+                  class="text-base font-medium mb-2"
+                  style="color: var(--color-macarel-encre);"
+              >
+                  {item.title}
+              </h3>
+              <p
+                  class="text-sm leading-loose"
+                  style="color: var(--color-macarel-schiste);"
+              >
+                  {item.body}
+              </p>
             </div>
         </div>
         ))}

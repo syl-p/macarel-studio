@@ -20,12 +20,11 @@ const points = [
 ]
 ---
  
-<section style="background-color: var(--color-macarel-craft);">
+<section class="section" style="background-color: var(--color-macarel-craft);">
   <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 items-center">
- 
+
     <!-- Colonne gauche — texte + signature -->
-    <div
-      class="px-10 py-14">
+    <div>
       <span
         class="section-label"
         style="color: var(--color-macarel-garrigue); opacity: 0.7;"
@@ -41,25 +40,23 @@ const points = [
         class="text-base leading-loose mb-4"
         style="color: var(--color-macarel-garrigue);"
       >
-        Un bassiste ne joue pas pour briller — il joue pour que les autres
-        puissent briller. Il pose la fondation, tient le groove, rend
-        l'ensemble cohérent.
+        Certains développeurs veulent briller. Moi, je veux que votre produit brille.<br>
+        Mon rôle c'est de poser les fondations solides, de tenir la cohérence technique à chaque étape, et de faire en sorte que ce que vous avez en tête devienne quelque chose qui tourne vraiment en production.
       </p>
  
       <p
         class="text-base leading-loose"
         style="color: var(--color-macarel-garrigue);"
       >
-        C'est exactement comme ça que j'aborde le développement.
-        Je suis là pour porter votre vision, pas pour imposer la mienne.
+        Je suis là pour porter votre vision — pas pour imposer la mienne.
       </p>
  
       <!-- Signature -->
-      <div
+      <a
         class="flex items-center gap-3 mt-8 pt-6"
+        href="/a-propos"
       >
-        <!-- Avatar initiale — remplacer par <img> quand photo dispo -->
-        <Avatar size="md" />
+        <Avatar size="md" src="/img/avatar.jpg" />
         <div>
           <p
             class="text-base font-medium"
@@ -74,7 +71,7 @@ const points = [
             Développeur web · Ruby on Rails · Carcassonne
           </p>
         </div>
-      </div>
+      </a>
     </div>
  
     <!-- Colonne droite — points clés -->

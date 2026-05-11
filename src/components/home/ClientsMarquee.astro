@@ -1,0 +1,98 @@
+---
+interface Props {
+  title?: string
+}
+
+const { title } = { title: "Ils m'ont fait confiance", ...Astro.props }
+
+const clients = [
+  { name: "Atnos", src: "/img/clients/logo_atnos.svg" },
+  { name: "CNIL", src: "/img/clients/cnil-logo.jpg" },
+  { name: "Beproject", src: "/img/clients/logo_beproject.png" },
+  { name: "Cité de Carcassonne", src: "/img/clients/logo-cite-carcassonne.png" },
+  { name: "Département de l'Aude", src: "/img/clients/logo-dep-aude.png" },
+  { name: "Les Autres", src: "/img/clients/logo-lesautres.png" },
+  { name: "Midiscom", src: "/img/clients/logo-midiscom.png" },
+]
+---
+
+<section class="section overflow-hidden">
+  <div class="container mx-auto">
+    <p class="section-label text-center mb-6">
+      {title}
+    </p>
+  </div>
+
+  <div class="clients-marquee container mx-auto" data-marquee>
+    <div class="clients-track" data-track>
+      <div class="clients-set" data-set>
+        {
+          clients.map((client) => (
+            <img
+              class="clients-logo"
+              src={client.src}
+              alt={client.name}
+              loading="lazy"
+            />
+          ))
+        }
+      </div>
+      <div class="clients-set" data-set>
+        {
+          clients.map((client) => (
+            <img
+              class="clients-logo"
+              src={client.src}
+              alt={client.name}
+              loading="lazy"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const marquee = document.querySelector("[data-marquee]")
+    const track = document.querySelector("[data-track]")
+    if (!marquee || !track) return
+
+    let x = 0
+    let rafId = null
+    let paused = false
+    let oneSetWidth = 0
+
+    function measure() {
+      const set = track.querySelector("[data-set]")
+      oneSetWidth = set ? set.getBoundingClientRect().width : 0
+    }
+
+    function animate() {
+      if (paused) {
+        rafId = requestAnimationFrame(animate)
+        return
+      }
+
+      measure()
+      if (oneSetWidth === 0) {
+        rafId = requestAnimationFrame(animate)
+        return
+      }
+
+      x -= 1
+      if (Math.abs(x) >= oneSetWidth) {
+        x += oneSetWidth
+      }
+
+      track.style.transform = `translateX(${x}px)`
+      rafId = requestAnimationFrame(animate)
+    }
+
+    rafId = requestAnimationFrame(animate)
+
+    marquee.addEventListener("mouseenter", () => { paused = true })
+    marquee.addEventListener("mouseleave", () => { paused = false })
+  })()
+</script>

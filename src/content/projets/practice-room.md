@@ -7,6 +7,7 @@ sector: "Industrie"
 status: "livré"
 featured: false
 color: "#C84B11"
+featuredImage: "/img/projets/practice-room/practice-room-screen1.png"
 stack:
   - Ruby on Rails
   - Hotwire · Turbo Streams
@@ -32,6 +33,8 @@ L'objectif : un outil unique, accessible depuis le terrain, sans formation.
 Le vrai défi n'était pas technique — c'était de comprendre un métier complexe
 avec des contraintes spécifiques : techniciens sur le terrain avec des téléphones,
 responsables en bureau, données sensibles. Chaque processus avait son exception.
+
+![Aperçu de l'application](/img/projets/practice-room/practice-room-screen1.png)
 
 ## La solution
 

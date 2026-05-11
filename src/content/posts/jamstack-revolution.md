@@ -13,6 +13,9 @@ Le JAMstack (JavaScript, APIs, Markup) est une approche moderne qui consiste à 
 ## Old School is the New Cool !
 Contrairement à un environnement web classique où chaque requête implique l'interrogation d'une base de données, son traitement, puis son rendu à l'utilisateur, le **JAMstack** repose sur le principe **qu'il n'y a aucun traitement backend** à effectuer lors de l'affichage d'une page. En supprimant ces étapes, on gagne en rapidité, en simplicité et en sécurité.
 
+
+![Schéma explicatif du JAMstack](/img/posts/jamstack-revolution/jamstack-explain.png)
+
 ### Rapidité
 
 Avec des navigateurs et des appareils toujours plus performants, avons-nous vraiment besoin d'utiliser des bases de données et des logiciels côté serveur (qui peuvent comporter des failles de sécurité) pour un simple blog ? Avec le JAMstack, lorsque l'utilisateur consulte une page, il obtient simplement un fichier HTML, dont le contenu est déjà pré-généré et prêt à être affiché instantanément.
@@ -22,6 +25,8 @@ En n'utilisant que des fichiers statiques, les risques de piratage sont grandeme
 
 ## Comment ça marche ?
 Le processus de création d'un site en JAMstack se déroule en local. À partir de ressources spécifiques, vous générez des fichiers HTML, CSS et JavaScript à l'aide d'un script (Node.js, Ruby, etc.). Ces fichiers sont ensuite déployés sur votre serveur d'hébergement.
+
+![Jekyll screenshot](/img/posts/jamstack-revolution/screen-jekyll.jpg)
 
 > Devinez quoi, vous êtes actuellement en train de consulter un site construit en JAMstack. Pour information, celui-ci est généré grâce à une gem Ruby appelée **Jekyll**.
 

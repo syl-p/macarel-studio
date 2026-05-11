@@ -2,48 +2,130 @@
 import Logo from './Logo.astro'
 
 const links = [
-  { href: '/a-propos',  label: 'À propos'  },
-  // { href: '/services',   label: 'Services'   },
-  { href: '/projets',   label: 'Projets'   },
-  { href: '/posts',  label: 'Blog'  },
-  { href: '/contact',   label: 'Contact'   },
+  { href: '/a-propos',  label: 'À propos' },
+  { href: '/projets',   label: 'Projets'  },
+  { href: '/posts',     label: 'Blog'     },
+  { href: '/contact',   label: 'Contact'  },
 ]
 
 const currentPath = Astro.url.pathname
 ---
+
 <nav class="px-7 py-3.5 border-b border-thin border-macarel-pierre/40 bg-macarel-calcaire sticky top-0 z-50">
   <div class="flex justify-between items-center container mx-auto">
-    <a href="/" class="flex items-center gap-2.5 no-underline">
+    <!-- Left: burger on mobile, logo on desktop -->
+    <div class="flex items-center gap-3">
+      <a href="/" class="flex items-center gap-2.5 no-underline">
         <Logo size={28} variant="dark" />
-        <span class="text-md font-medium tracking-wide text-macarel-encre">
+        <span class="max-md:hidden text-md font-medium tracking-wide text-macarel-encre">
           Macarel
           <span class="text-[9px] tracking-[0.16em] text-macarel-schiste ml-1 align-middle uppercase">
             Studio
           </span>
         </span>
       </a>
+    </div>
 
-      <div class="flex gap-6">
-        {links.map(({ href, label }) => (
-          <a
-            href={href}
-            class:list={[
-              'text-base transition-colors duration-200',
-              currentPath === href
-                ? 'text-macarel-encre font-medium'
-                : 'text-macarel-schiste hover:text-macarel-encre'
-            ]}
-          >
-            {label}
-          </a>
-        ))}
-      </div>
+    <!-- Desktop links -->
+    <div class="hidden md:flex gap-6">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'text-base transition-colors duration-200 no-underline',
+            currentPath === href
+              ? 'text-macarel-encre font-medium'
+              : 'text-macarel-schiste hover:text-macarel-encre',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
 
-      <a
-        href="/contact"
-        class="text-base font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
+    <!-- Right: CTA always visible -->
+    <a
+      href="/contact"
+      class="text-base font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
+    >
+      Parler du projet
+    </a>
+
+      <button
+        id="nav-toggle"
+        class="md:hidden relative w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer"
+        aria-label="Menu"
+        aria-expanded="false"
       >
-        Parler du projet
-      </a>
+        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200" style="transform: translateY(-5px)"></span>
+        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200"></span>
+        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200" style="transform: translateY(5px)"></span>
+      </button>
+
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden" data-open="false">
+    <div class="flex flex-col gap-1 pt-4 pb-3 border-t border-thin border-macarel-pierre/40 mt-3">
+      {links.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'text-base transition-colors duration-200 py-2.5 px-3 rounded-md no-underline',
+            currentPath === href
+              ? 'text-macarel-encre font-medium bg-macarel-pierre/20'
+              : 'text-macarel-schiste hover:text-macarel-encre hover:bg-macarel-pierre/10',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
   </div>
 </nav>
+
+<style>
+  #mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+
+  #mobile-menu[data-open="true"] {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  #nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(0) rotate(45deg) !important;
+  }
+
+  #nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg) !important;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle') as HTMLButtonElement | null
+  const menu = document.getElementById('mobile-menu') as HTMLDivElement | null
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true'
+      toggle.setAttribute('aria-expanded', String(!isOpen))
+      menu.setAttribute('data-open', String(!isOpen))
+    })
+
+    addEventListener('resize', () => {
+      if (innerWidth >= 768) {
+        toggle.setAttribute('aria-expanded', 'false')
+        menu.setAttribute('data-open', 'false')
+      }
+    })
+  }
+</script>

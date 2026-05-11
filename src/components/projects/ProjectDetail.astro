@@ -6,26 +6,41 @@ interface Props {
 }
 
 const { project } = Astro.props
-const { title, tagline, client, sector, year, status, color, stack, tags } = project.data
+const { title, tagline, client, sector, year, status, color, stack, tags, featuredImage } = project.data
 
 const statusColors = {
   'livré':       { bg: '#E8F5EE', text: '#2D6A4F' },
   'en cours':    { bg: '#FEF3E2', text: '#C84B11' },
   'maintenance': { bg: '#FDF6EE', text: '#7A5C40' },
 }
-const sc = statusColors[status]
+const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
 ---
 
+<!-- Featured image banner -->
+{featuredImage && (
+  <div
+    class="relative overflow-hidden"
+    style="height: 420px; background-color: var(--color-macarel-nuit);"
+  >
+    <img
+      src={featuredImage}
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to top, var(--color-macarel-calcaire) 0%, transparent 40%);"
+    ></div>
+  </div>
+)}
+
 <!-- Hero -->
-<section
-  class="px-10 pt-16 pb-14 border-b border-thin"
-  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
->
+<section class="px-10 pt-12 pb-14">
   <div class="container mx-auto">
     <!-- Breadcrumb -->
     <a
       href="/projets"
-      class="inline-flex items-center gap-1.5 text-xs no-underline mb-10
+      class="inline-flex items-center gap-1.5 text-xs no-underline mb-8
             transition-colors duration-200"
       style="color: var(--color-macarel-schiste);"
     >
@@ -91,7 +106,7 @@ const sc = statusColors[status]
           Stack
         </span>
         <div class="flex flex-col gap-2">
-          {stack.map((tech) => (
+          {stack && stack.map((tech) => (
             <div class="craft-stack-item">
               <span
                 class="craft-stack-dot"
@@ -104,7 +119,7 @@ const sc = statusColors[status]
       </div>
 
       <!-- Tags -->
-      {tags.length > 0 && (
+      {tags && tags.length > 0 && (
         <div>
           <span class="text-label" style="display: block; margin-bottom: 14px;">
             Catégories

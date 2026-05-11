@@ -29,8 +29,11 @@ const projets = defineCollection({
     status: z.enum(['livré', 'en cours', 'maintenance']).default('livré'),
     featured: z.boolean().default(false),
     color: z.string().default('#C84B11'),
+    featuredImage: z.string().optional(),
     stack: z.array(z.string()).default([]),
     tags: z.array(z.string()).default([]),
+    external_link: z.string().optional(),
+    github_link: z.string().optional(),
   }),
 });
 

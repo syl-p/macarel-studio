@@ -1,26 +1,26 @@
-
 ---
 const services = Object.values(import.meta.glob('../../pages/services/*.md', { eager: true }))
-console.log(services)
 ---
  
-<section class="section container mx-auto">
-  <span class="section-label">Ce que je construis</span>
-  <h2 class="section-h2">Un Focus sur la valeur.</h2>
-  <p class="section-intro">
-    Chaque projet que je livre est pensé pour durer et être maintenu facilement.
-  </p>
- 
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
-    {services.map((s) => (
-      <div class="card">
-        <div class="card-icon" style={`background-color: ${s.frontmatter.iconBg};`}>
-          <Fragment set:html={s.frontmatter.icon} />
+<section class="section">
+  <div class="container mx-auto">
+    <span class="section-label">Ce que je construis</span>
+    <h2 class="section-h2">Un Focus sur la valeur.</h2>
+    <p class="section-intro">
+      Chaque projet que je livre est pensé pour durer et être maintenu facilement.
+    </p>
+  
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-3">
+      {services.map((s) => (
+        <div class="card">
+          <div class="card-icon" style={`background-color: ${s.frontmatter.iconBg};`}>
+            <Fragment set:html={s.frontmatter.icon} />
+          </div>
+          <h3 class="text-base font-bold text-macarel-encre mb-1.5">{s.frontmatter.title}</h3>
+          <p class="text-base text-macarel-schiste leading-relaxed mb-2.5">{s.frontmatter.description}</p>
+          <span class={s.frontmatter.badgeClass}>{s.frontmatter.badge}</span>
         </div>
-        <h3 class="text-base font-bold text-macarel-encre mb-1.5">{s.frontmatter.title}</h3>
-        <p class="text-base text-macarel-schiste leading-relaxed mb-2.5">{s.frontmatter.description}</p>
-        <span class={s.frontmatter.badgeClass}>{s.frontmatter.badge}</span>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 </section>

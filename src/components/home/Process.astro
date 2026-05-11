@@ -18,19 +18,21 @@ const steps = [
 ]
 ---
  
-<section class="section container mx-auto">
-  <span class="section-label">Comment je travaille</span>
- 
-  <div class="mt-1">
-    {steps.map((step) => (
-      <div class="step-row">
-        <span class="step-number">{step.n}</span>
-        <div>
-          <p class="step-title">{step.title}</p>
-          <p class="step-body">{step.body}</p>
+<section class="section">
+  <div class="container mx-auto">
+    <span class="section-label">Comment je travaille</span>
+  
+    <div class="mt-1">
+      {steps.map((step) => (
+        <div class="step-row">
+          <span class="step-number">{step.n}</span>
+          <div>
+            <p class="step-title">{step.title}</p>
+            <p class="step-body">{step.body}</p>
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 </section>
  

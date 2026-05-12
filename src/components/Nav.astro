@@ -11,17 +11,14 @@ const links = [
 const currentPath = Astro.url.pathname
 ---
 
-<nav class="px-7 py-3.5 border-b border-thin border-macarel-pierre/40 bg-macarel-calcaire sticky top-0 z-50">
+<nav class="px-7 py-3.5 border-b border-thin border-websylvain-pierre/40 bg-websylvain-calcaire sticky top-0 z-50">
   <div class="flex justify-between items-center container mx-auto">
     <!-- Left: burger on mobile, logo on desktop -->
     <div class="flex items-center gap-3">
       <a href="/" class="flex items-center gap-2.5 no-underline">
         <Logo size={28} variant="dark" />
-        <span class="max-md:hidden text-md font-medium tracking-wide text-macarel-encre">
-          Macarel
-          <span class="text-[9px] tracking-[0.16em] text-macarel-schiste ml-1 align-middle uppercase">
-            Studio
-          </span>
+        <span class="max-md:hidden text-md font-medium tracking-wide text-websylvain-encre">
+          WebSylvain
         </span>
       </a>
     </div>
@@ -34,8 +31,8 @@ const currentPath = Astro.url.pathname
           class:list={[
             'text-base transition-colors duration-200 no-underline',
             currentPath === href
-              ? 'text-macarel-encre font-medium'
-              : 'text-macarel-schiste hover:text-macarel-encre',
+              ? 'text-websylvain-encre font-medium'
+              : 'text-websylvain-schiste hover:text-websylvain-encre',
           ]}
         >
           {label}
@@ -46,7 +43,7 @@ const currentPath = Astro.url.pathname
     <!-- Right: CTA always visible -->
     <a
       href="/contact"
-      class="text-base font-medium text-macarel-calcaire bg-macarel-argile px-4 py-[7px] rounded-md hover:bg-macarel-nuit transition-colors duration-200 no-underline"
+      class="text-base font-medium text-websylvain-calcaire bg-websylvain-argile px-4 py-[7px] rounded-md hover:bg-websylvain-nuit transition-colors duration-200 no-underline"
     >
       Parler du projet
     </a>
@@ -57,24 +54,24 @@ const currentPath = Astro.url.pathname
         aria-label="Menu"
         aria-expanded="false"
       >
-        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200" style="transform: translateY(-5px)"></span>
-        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200"></span>
-        <span class="absolute block w-5 h-px bg-macarel-encre transition-all duration-200" style="transform: translateY(5px)"></span>
+        <span class="absolute block w-5 h-px bg-websylvain-encre transition-all duration-200" style="transform: translateY(-5px)"></span>
+        <span class="absolute block w-5 h-px bg-websylvain-encre transition-all duration-200"></span>
+        <span class="absolute block w-5 h-px bg-websylvain-encre transition-all duration-200" style="transform: translateY(5px)"></span>
       </button>
 
   </div>
 
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden" data-open="false">
-    <div class="flex flex-col gap-1 pt-4 pb-3 border-t border-thin border-macarel-pierre/40 mt-3">
+    <div class="flex flex-col gap-1 pt-4 pb-3 border-t border-thin border-websylvain-pierre/40 mt-3">
       {links.map(({ href, label }) => (
         <a
           href={href}
           class:list={[
             'text-base transition-colors duration-200 py-2.5 px-3 rounded-md no-underline',
             currentPath === href
-              ? 'text-macarel-encre font-medium bg-macarel-pierre/20'
-              : 'text-macarel-schiste hover:text-macarel-encre hover:bg-macarel-pierre/10',
+              ? 'text-websylvain-encre font-medium bg-websylvain-pierre/20'
+              : 'text-websylvain-schiste hover:text-websylvain-encre hover:bg-websylvain-pierre/10',
           ]}
         >
           {label}

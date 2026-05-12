@@ -1,5 +1,5 @@
 /* ================================================
-   MACAREL STUDIO — global.css
+   WEBSYLVAIN — global.css
    Tailwind v4 · Astro · @tailwindcss/vite
    
    En v4, tout le thème vit ici via @theme.
@@ -10,36 +10,36 @@
 @plugin "@tailwindcss/typography";
 
 /* ------------------------------------------------
-   @theme — Design tokens Macarel Studio
+   @theme — Design tokens WebSylvain
    Chaque variable génère automatiquement les
    classes utilitaires correspondantes.
-   Ex: --color-macarel-argile → bg-macarel-argile,
-       text-macarel-argile, border-macarel-argile...
+   Ex: --color-websylvain-argile → bg-websylvain-argile,
+       text-websylvain-argile, border-websylvain-argile...
    ------------------------------------------------ */
 @theme {
 
   /* ── Couleurs ── */
 
-  /* Primaires chauds — identité Macarel */
-  --color-macarel-nuit:       #1A0A00;  /* fond hero, CTA band, navbar optionnelle */
-  --color-macarel-argile:     #C84B11;  /* rouge audois — couleur principale, CTA  */
-  --color-macarel-soleil:     #F2A122;  /* jaune — accent chaud, logo !            */
-  --color-macarel-miel:       #F7C97A;  /* jaune doux — texte sur fond sombre      */
-  --color-macarel-calcaire:   #FDF6EE;  /* blanc chaud — fond page                 */
-  --color-macarel-pierre:     #E8D5BA;  /* beige — bordures sur fond clair         */
-  --color-macarel-garrigue:   #5C3D1E;  /* brun — texte tertiaire, séparateurs     */
-  --color-macarel-roc:        #2A1200;  /* quasi-noir chaud — fond tags sur hero   */
+  /* Primaires chauds — identité WebSylvain */
+  --color-websylvain-nuit:       #1A0A00;  /* fond hero, CTA band, navbar optionnelle */
+  --color-websylvain-argile:     #C84B11;  /* rouge audois — couleur principale, CTA  */
+  --color-websylvain-soleil:     #F2A122;  /* jaune — accent chaud, logo !            */
+  --color-websylvain-miel:       #F7C97A;  /* jaune doux — texte sur fond sombre      */
+  --color-websylvain-calcaire:   #FDF6EE;  /* blanc chaud — fond page                 */
+  --color-websylvain-pierre:     #E8D5BA;  /* beige — bordures sur fond clair         */
+  --color-websylvain-garrigue:   #5C3D1E;  /* brun — texte tertiaire, séparateurs     */
+  --color-websylvain-roc:        #2A1200;  /* quasi-noir chaud — fond tags sur hero   */
 
   /* Texte */
-  --color-macarel-encre:      #1F1208;  /* texte primaire sur fond clair           */
-  --color-macarel-schiste:    #7A5C40;  /* texte secondaire sur fond clair         */
+  --color-websylvain-encre:      #1F1208;  /* texte primaire sur fond clair           */
+  --color-websylvain-schiste:    #7A5C40;  /* texte secondaire sur fond clair         */
 
   /* Accent tech — vert thym sauvage */
-  --color-macarel-thym:       #2D6A4F;
-  --color-macarel-thym-lt:    #E8F5EE;
+  --color-websylvain-thym:       #2D6A4F;
+  --color-websylvain-thym-lt:    #E8F5EE;
 
   /* Fond section craft */
-  --color-macarel-craft:      #FDF0E6;
+  --color-websylvain-craft:      #FDF0E6;
 
   /* ── Typographie ── */
   --font-display: "DM Serif Display", Georgia, serif;
@@ -117,8 +117,8 @@
   }
 
   body {
-    background-color: var(--color-macarel-calcaire);
-    color: var(--color-macarel-encre);
+    background-color: var(--color-websylvain-calcaire);
+    color: var(--color-websylvain-encre);
   }
 
   /* Titres — display serif pour h1, sans pour le reste */
@@ -151,17 +151,17 @@
   }
 
   a {
-    color: var(--color-macarel-argile);
+    color: var(--color-websylvain-argile);
     transition: color 200ms ease;
   }
 
   a:hover {
-    color: var(--color-macarel-nuit);
+    color: var(--color-websylvain-nuit);
   }
 
   *:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-macarel-argile) 35%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-websylvain-argile) 35%, transparent);
     border-radius: var(--radius-md);
   }
 }
@@ -176,8 +176,8 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--color-macarel-argile);
-    color: var(--color-macarel-calcaire);
+    background-color: var(--color-websylvain-argile);
+    color: var(--color-websylvain-calcaire);
     font-size: var(--text-base);
     font-weight: 500;
     padding: 11px 22px;
@@ -187,7 +187,7 @@
     transition: background-color 200ms ease, transform 100ms ease;
     text-decoration: none;
   }
-  .btn-primary:hover  { background-color: var(--color-macarel-nuit); color: var(--color-macarel-calcaire); }
+  .btn-primary:hover  { background-color: var(--color-websylvain-nuit); color: var(--color-websylvain-calcaire); }
   .btn-primary:active { transform: scale(0.98); }
 
   .btn-secondary {
@@ -195,17 +195,17 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: var(--color-macarel-encre);
+    color: var(--color-websylvain-encre);
     font-size: var(--text-base);
     font-weight: 400;
     padding: 11px 22px;
     border-radius: var(--radius-lg);
-    border: 0.5px solid var(--color-macarel-pierre);
+    border: 0.5px solid var(--color-websylvain-pierre);
     cursor: pointer;
     transition: all 200ms ease;
     text-decoration: none;
   }
-  .btn-secondary:hover  { background-color: color-mix(in srgb, var(--color-macarel-pierre) 30%, transparent); }
+  .btn-secondary:hover  { background-color: color-mix(in srgb, var(--color-websylvain-pierre) 30%, transparent); }
   .btn-secondary:active { transform: scale(0.98); }
 
   /* Variante pour sections sombres */
@@ -214,27 +214,27 @@
     align-items: center;
     gap: 0.5rem;
     background-color: transparent;
-    color: var(--color-macarel-calcaire);
+    color: var(--color-websylvain-calcaire);
     font-size: var(--text-base);
     font-weight: 400;
     padding: 11px 22px;
     border-radius: var(--radius-lg);
-    border: 0.5px solid var(--color-macarel-garrigue);
+    border: 0.5px solid var(--color-websylvain-garrigue);
     cursor: pointer;
     transition: all 200ms ease;
     text-decoration: none;
   }
   .btn-secondary-dark:hover {
-    border-color: var(--color-macarel-miel);
-    color: var(--color-macarel-miel);
+    border-color: var(--color-websylvain-miel);
+    color: var(--color-websylvain-miel);
   }
   .btn-secondary-dark:active { transform: scale(0.98); }
 
   .btn-nav {
     display: inline-flex;
     align-items: center;
-    background-color: var(--color-macarel-argile);
-    color: var(--color-macarel-calcaire);
+    background-color: var(--color-websylvain-argile);
+    color: var(--color-websylvain-calcaire);
     font-size: var(--text-xs);
     font-weight: 500;
     padding: 7px 16px;
@@ -244,24 +244,24 @@
     transition: background-color 200ms ease;
     text-decoration: none;
   }
-  .btn-nav:hover { background-color: var(--color-macarel-nuit); color: var(--color-macarel-calcaire); }
+  .btn-nav:hover { background-color: var(--color-websylvain-nuit); color: var(--color-websylvain-calcaire); }
 
   /* ── Navigation ── */
   .nav-link {
     font-size: var(--text-sm);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     text-decoration: none;
     transition: color 200ms ease;
     font-weight: 400;
   }
-  .nav-link:hover       { color: var(--color-macarel-encre); }
+  .nav-link:hover       { color: var(--color-websylvain-encre); }
   .nav-link[aria-current="page"] {
-    color: var(--color-macarel-encre);
+    color: var(--color-websylvain-encre);
     font-weight: 500;
   }
 
   /* ── Hero ── */
-  .hero-dark { background-color: var(--color-macarel-nuit); }
+  .hero-dark { background-color: var(--color-websylvain-nuit); }
 
   .hero-eyebrow {
     display: flex;
@@ -273,14 +273,14 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: var(--color-macarel-soleil);
+    background-color: var(--color-websylvain-soleil);
     flex-shrink: 0;
   }
   .hero-eyebrow-text {
     font-size: var(--text-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-macarel-miel);
+    color: var(--color-websylvain-miel);
     opacity: 0.7;
   }
 
@@ -289,21 +289,21 @@
     font-size: var(--text-xs);
     padding: 4px 9px;
     border-radius: 4px;
-    background-color: var(--color-macarel-roc);
-    color: var(--color-macarel-miel);
-    border: 0.5px solid color-mix(in srgb, var(--color-macarel-garrigue) 50%, transparent);
+    background-color: var(--color-websylvain-roc);
+    color: var(--color-websylvain-miel);
+    border: 0.5px solid color-mix(in srgb, var(--color-websylvain-garrigue) 50%, transparent);
   }
 
   /* ── Cards ── */
   .card {
-    background-color: var(--color-macarel-calcaire);
-    border: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 60%, transparent);
+    background-color: var(--color-websylvain-calcaire);
+    border: 0.5px solid color-mix(in srgb, var(--color-websylvain-pierre) 60%, transparent);
     border-radius: var(--radius-xl);
     padding: 18px;
     transition: border-color 200ms ease;
   }
   .card:hover {
-    border-color: color-mix(in srgb, var(--color-macarel-argile) 30%, transparent);
+    border-color: color-mix(in srgb, var(--color-websylvain-argile) 30%, transparent);
   }
 
   .card-icon {
@@ -319,7 +319,7 @@
   /* ── Sections ── */
   .section {
     padding: 36px 28px;
-    border-bottom: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);
+    border-bottom: 0.5px solid color-mix(in srgb, var(--color-websylvain-pierre) 50%, transparent);
   }
 
   .section-label {
@@ -327,7 +327,7 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     margin-bottom: 6px;
     display: block;
   }
@@ -336,13 +336,13 @@
     font-size: var(--text-2xl);
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: var(--color-macarel-encre);
+    color: var(--color-websylvain-encre);
     margin-bottom: 8px;
   }
 
   .section-intro {
     font-size: var(--text-base);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     line-height: 1.65;
     max-width: var(--container-content);
     margin-bottom: 22px;
@@ -354,7 +354,7 @@
     grid-template-columns: 44px 1fr;
     gap: 14px;
     padding: 15px 0;
-    border-bottom: 0.5px solid color-mix(in srgb, var(--color-macarel-pierre) 40%, transparent);
+    border-bottom: 0.5px solid color-mix(in srgb, var(--color-websylvain-pierre) 40%, transparent);
     align-items: start;
   }
   .step-row:last-child { border-bottom: none; }
@@ -363,20 +363,20 @@
     font-size: var(--text-xs);
     font-weight: 500;
     font-family: var(--font-mono);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     padding-top: 2px;
   }
 
   .step-title {
     font-size: var(--text-base);
     font-weight: 500;
-    color: var(--color-macarel-encre);
+    color: var(--color-websylvain-encre);
     margin-bottom: 3px;
   }
 
   .step-body {
     font-size: var(--text-base);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     line-height: 1.55;
   }
 
@@ -389,7 +389,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     background-color: #FEF3E2;
-    color: var(--color-macarel-argile);
+    color: var(--color-websylvain-argile);
   }
 
   .badge-thym {
@@ -399,8 +399,8 @@
     border-radius: 3px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    background-color: var(--color-macarel-thym-lt);
-    color: var(--color-macarel-thym);
+    background-color: var(--color-websylvain-thym-lt);
+    color: var(--color-websylvain-thym);
   }
 
   /* ── Fact items ── */
@@ -409,18 +409,18 @@
     align-items: flex-start;
     gap: 8px;
     font-size: var(--text-sm);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     line-height: 1.5;
     padding: 8px 12px;
     border-radius: var(--radius-md);
-    background-color: color-mix(in srgb, var(--color-macarel-pierre) 20%, transparent);
+    background-color: color-mix(in srgb, var(--color-websylvain-pierre) 20%, transparent);
   }
 
   .fact-dot {
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: var(--color-macarel-argile);
+    background-color: var(--color-websylvain-argile);
     flex-shrink: 0;
     margin-top: 5px;
   }
@@ -428,7 +428,7 @@
   /* ── CTA band ── */
   .cta-band {
     margin: 20px 28px 28px;
-    background-color: var(--color-macarel-nuit);
+    background-color: var(--color-websylvain-nuit);
     border-radius: var(--radius-xl);
     padding: 28px;
     display: flex;
@@ -442,13 +442,13 @@
     font-size: var(--text-xl);
     font-weight: 500;
     letter-spacing: -0.02em;
-    color: var(--color-macarel-calcaire);
+    color: var(--color-websylvain-calcaire);
     line-height: 1.2;
   }
 
   .cta-band-sub {
     font-size: var(--text-xs);
-    color: var(--color-macarel-miel);
+    color: var(--color-websylvain-miel);
     opacity: 0.5;
     margin-top: 6px;
   }
@@ -456,7 +456,7 @@
   /* ── Manifeste ── */
   .manifesto {
     padding: 40px 28px;
-    background-color: var(--color-macarel-nuit);
+    background-color: var(--color-websylvain-nuit);
   }
 
   .manifesto-eyebrow {
@@ -470,14 +470,14 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: var(--color-macarel-soleil);
+    background-color: var(--color-websylvain-soleil);
   }
 
   .manifesto-label {
     font-size: var(--text-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-macarel-garrigue);
+    color: var(--color-websylvain-garrigue);
     opacity: 0.7;
   }
 
@@ -485,7 +485,7 @@
     font-size: var(--text-lg);
     font-weight: 500;
     letter-spacing: -0.01em;
-    color: var(--color-macarel-calcaire);
+    color: var(--color-websylvain-calcaire);
     line-height: 1.55;
     max-width: var(--container-prose);
     margin-bottom: 16px;
@@ -495,12 +495,12 @@
     font-size: var(--text-xs);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-macarel-garrigue);
+    color: var(--color-websylvain-garrigue);
   }
 
   /* ── Section craft (fond crème) ── */
   .craft-section {
-    background-color: var(--color-macarel-craft);
+    background-color: var(--color-websylvain-craft);
   }
 
   .craft-stack-item {
@@ -508,9 +508,9 @@
     align-items: center;
     gap: 10px;
     padding: 10px 14px;
-    background-color: var(--color-macarel-calcaire);
+    background-color: var(--color-websylvain-calcaire);
     border-radius: var(--radius-md);
-    border: 0.5px solid var(--color-macarel-pierre);
+    border: 0.5px solid var(--color-websylvain-pierre);
   }
 
   .craft-stack-dot {
@@ -523,12 +523,12 @@
   .craft-stack-name {
     font-size: var(--text-base);
     font-weight: 500;
-    color: var(--color-macarel-nuit);
+    color: var(--color-websylvain-nuit);
   }
 
   .craft-stack-desc {
     font-size: var(--text-xs);
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     margin-left: auto;
   }
 
@@ -536,7 +536,7 @@
     display: block;
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     margin-bottom: 6px;
   }
 
@@ -569,7 +569,7 @@
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
   }
 
   /* Logo wordmark */
@@ -577,13 +577,13 @@
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: var(--color-macarel-encre);
+    color: var(--color-websylvain-encre);
   }
 
   .logo-wordmark-sub {
     font-size: 9px;
     letter-spacing: 0.16em;
-    color: var(--color-macarel-schiste);
+    color: var(--color-websylvain-schiste);
     text-transform: uppercase;
     margin-left: 4px;
     vertical-align: middle;

@@ -15,7 +15,7 @@ const posts = (await getCollection('posts')).sort(
 ---
 
 <Layout
-  title="Blog — Macarel Studio"
+  title="Blog — WebSylvain"
   description="Notes techniques, retours d'expérience et réflexions sur le métier du développement web. Écrites depuis Carcassonne."
 >
   <Nav />
@@ -38,7 +38,7 @@ const posts = (await getCollection('posts')).sort(
         </div>
         
         {posts.length === 0 && (
-          <div class="text-center py-16" style="color: var(--color-macarel-schiste);">
+          <div class="text-center py-16" style="color: var(--color-websylvain-schiste);">
             <p class="text-lg mb-2">Aucun article pour le moment.</p>
             <p class="text-sm">Revenez bientôt — quelque chose se prépare.</p>
           </div>

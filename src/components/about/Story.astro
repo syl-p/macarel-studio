@@ -14,7 +14,7 @@ const timeline = [
   },
   {
     period: "Aujourd'hui",
-    title: 'Macarel Studio',
+    title: 'WebSylvain',
     body: "Indépendant à Carcassonne, je travaille avec des PME, des startups et des agences qui ont besoin d'un développeur impliqué — pas d'un prestataire qui livre et disparaît.",
     color: '#2D6A4F',
   },
@@ -29,7 +29,7 @@ const timeline = [
     <div class="flex flex-col gap-0">
         {timeline.map((item, i) => (
         <div class="grid gap-6 py-8 border-b border-thin sm:grid-cols-[160px_1fr]"
-            style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 40%, transparent);"
+            style="border-color: color-mix(in srgb, var(--color-websylvain-pierre) 40%, transparent);"
         >
             <!-- Période -->
             <div class="flex items-center gap-3 sm:flex-col sm:gap-2">
@@ -39,7 +39,7 @@ const timeline = [
               ></div>
               <span
                   class="text-sm font-medium"
-                  style="color: var(--color-macarel-schiste);"
+                  style="color: var(--color-websylvain-schiste);"
               >
                   {item.period}
               </span>
@@ -49,13 +49,13 @@ const timeline = [
             <div>
               <h3
                   class="text-base font-medium mb-2"
-                  style="color: var(--color-macarel-encre);"
+                  style="color: var(--color-websylvain-encre);"
               >
                   {item.title}
               </h3>
               <p
                   class="text-sm leading-loose"
-                  style="color: var(--color-macarel-schiste);"
+                  style="color: var(--color-websylvain-schiste);"
               >
                   {item.body}
               </p>

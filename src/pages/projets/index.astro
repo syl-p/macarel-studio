@@ -17,7 +17,7 @@ const sorted = allProjects.sort((a, b) => {
 ---
 
 <Layout
-  title="Projets — Macarel Studio"
+  title="Projets — WebSylvain"
   description="Outils métier, SaaS et plateformes web conçus avec Rails et Hotwire."
 >
   <Nav />
@@ -25,7 +25,7 @@ const sorted = allProjects.sort((a, b) => {
     <ProjectsHero count={sorted.length} />
     <section
       class="py-14 border-b border-thin"
-      style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+      style="border-color: color-mix(in srgb, var(--color-websylvain-pierre) 50%, transparent);"
     >
       <div class="container mx-auto">
         {sorted.length > 0 ? (
@@ -38,22 +38,22 @@ const sorted = allProjects.sort((a, b) => {
             <div class="py-20 flex flex-col items-center gap-4 text-center">
             <div
                 class="w-12 h-12 rounded-xl flex items-center justify-center"
-                style="background-color: var(--color-macarel-craft);
-                    border: 0.5px solid var(--color-macarel-pierre);"
+                style="background-color: var(--color-websylvain-craft);
+                    border: 0.5px solid var(--color-websylvain-pierre);"
             >
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <rect x="2" y="2" width="16" height="16" rx="3"
-                        stroke="var(--color-macarel-schiste)" stroke-width="1.2"/>
+                        stroke="var(--color-websylvain-schiste)" stroke-width="1.2"/>
                 <path d="M6 7h8M6 10h5M6 13h6"
-                        stroke="var(--color-macarel-schiste)" stroke-width="1.1"
+                        stroke="var(--color-websylvain-schiste)" stroke-width="1.1"
                         stroke-linecap="round"/>
                 </svg>
             </div>
             <div>
-                <p class="text-base font-medium" style="color: var(--color-macarel-encre);">
+                <p class="text-base font-medium" style="color: var(--color-websylvain-encre);">
                 Projets en cours de documentation
                 </p>
-                <p class="text-sm mt-1" style="color: var(--color-macarel-schiste);">
+                <p class="text-sm mt-1" style="color: var(--color-websylvain-schiste);">
                 Revenez bientôt — ou contactez-moi directement.
                 </p>
             </div>

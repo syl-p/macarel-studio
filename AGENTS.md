@@ -1,4 +1,4 @@
-# Macarel Studio — Project Context & Guidelines
+# WebSylvain — Project Context & Guidelines
 > Ce fichier est destiné aux agents IA (Claude Code, OpenCode, Aider, Cursor, Gemini CLI…).
 > Lis-le entièrement avant d'écrire la moindre ligne de code.
 
@@ -7,7 +7,7 @@
 ## 1. Qui je suis
 
 Je suis un développeur fullstack solo basé à **Carcassonne, Occitanie**.
-Je travaille sous le nom **Macarel Studio** — un studio de développement web artisanal.
+Je travaille sous le nom **WebSylvain** — mon studio de développement web artisanal.
 
 Mon profil technique :
 - Expertise principale : **Ruby on Rails + Hotwire (Turbo, Stimulus) + HTMX**
@@ -20,9 +20,9 @@ Je suis seul sur ce projet pour l'instant. Le code doit être **lisible, mainten
 
 ---
 
-## 2. Ce projet — macarel.studio
+## 2. Ce projet — websylvain.com
 
-Site vitrine de Macarel Studio, construit avec **Astro 5 + Tailwind CSS v4**.
+Site vitrine de WebSylvain, construit avec **Astro 5 + Tailwind CSS v4**.
 
 ### Objectif
 Présenter mes services, ma philosophie craft, et convertir des visiteurs en clients (PME, startups, agences design cherchant un bras technique Rails).
@@ -85,33 +85,33 @@ En v4, **il n'y a pas de `tailwind.config.ts`**. Tout le thème est défini dans
 
 ```css
 /* Exemple : cette déclaration dans @theme */
---color-macarel-argile: #C84B11;
+--color-websylvain-argile: #C84B11;
 
 /* Génère automatiquement ces classes */
-bg-macarel-argile
-text-macarel-argile
-border-macarel-argile
+bg-websylvain-argile
+text-websylvain-argile
+border-websylvain-argile
 ```
 
 **Ne jamais créer de `tailwind.config.ts`** — tout passe par `global.css`.
 
 ### Palette de couleurs
 
-| Token CSS                        | Valeur    | Usage                                    |
-|----------------------------------|-----------|------------------------------------------|
-| `--color-macarel-nuit`           | `#1A0A00` | Fond hero, CTA band, sections sombres    |
-| `--color-macarel-argile`         | `#C84B11` | Couleur principale, CTA, liens           |
-| `--color-macarel-soleil`         | `#F2A122` | Accent chaud, logo !, em dans titres     |
-| `--color-macarel-miel`           | `#F7C97A` | Texte sur fond sombre                    |
-| `--color-macarel-calcaire`       | `#FDF6EE` | Fond page (jamais blanc pur)             |
-| `--color-macarel-pierre`         | `#E8D5BA` | Bordures sur fond clair                  |
-| `--color-macarel-garrigue`       | `#5C3D1E` | Texte tertiaire, labels sur fond crème   |
-| `--color-macarel-roc`            | `#2A1200` | Fond tags sur hero sombre                |
-| `--color-macarel-encre`          | `#1F1208` | Texte primaire sur fond clair            |
-| `--color-macarel-schiste`        | `#7A5C40` | Texte secondaire sur fond clair          |
-| `--color-macarel-thym`           | `#2D6A4F` | Accent tech, succès, badges verts        |
-| `--color-macarel-thym-lt`        | `#E8F5EE` | Fond badge thym                          |
-| `--color-macarel-craft`          | `#FDF0E6` | Fond section "philosophie craft"         |
+| Token CSS                          | Valeur    | Usage                                    |
+|------------------------------------|-----------|------------------------------------------|
+| `--color-websylvain-nuit`         | `#1A0A00` | Fond hero, CTA band, sections sombres    |
+| `--color-websylvain-argile`       | `#C84B11` | Couleur principale, CTA, liens           |
+| `--color-websylvain-soleil`       | `#F2A122` | Accent chaud, logo !, em dans titres     |
+| `--color-websylvain-miel`         | `#F7C97A` | Texte sur fond sombre                    |
+| `--color-websylvain-calcaire`     | `#FDF6EE` | Fond page (jamais blanc pur)             |
+| `--color-websylvain-pierre`       | `#E8D5BA` | Bordures sur fond clair                  |
+| `--color-websylvain-garrigue`     | `#5C3D1E` | Texte tertiaire, labels sur fond crème   |
+| `--color-websylvain-roc`          | `#2A1200` | Fond tags sur hero sombre                |
+| `--color-websylvain-encre`        | `#1F1208` | Texte primaire sur fond clair            |
+| `--color-websylvain-schiste`      | `#7A5C40` | Texte secondaire sur fond clair          |
+| `--color-websylvain-thym`         | `#2D6A4F` | Accent tech, succès, badges verts        |
+| `--color-websylvain-thym-lt`      | `#E8F5EE` | Fond badge thym                          |
+| `--color-websylvain-craft`        | `#FDF0E6` | Fond section "philosophie craft"         |
 
 ### Typographie
 
@@ -142,11 +142,11 @@ labels/mono   → DM Mono
 
 ### Couleurs de fond par zone
 ```
-Page entière      → bg-macarel-calcaire (#FDF6EE) — jamais blanc pur
-Hero              → bg-macarel-nuit (#1A0A00)
-Section craft     → bg-macarel-craft (#FDF0E6)
-Section alternée  → bg-macarel-pierre/20
-CTA band          → bg-macarel-nuit
+Page entière      → bg-websylvain-calcaire (#FDF6EE) — jamais blanc pur
+Hero              → bg-websylvain-nuit (#1A0A00)
+Section craft     → bg-websylvain-craft (#FDF0E6)
+Section alternée  → bg-websylvain-pierre/20
+CTA band          → bg-websylvain-nuit
 Footer            → fond calcaire + border-top pierre
 ```
 
@@ -239,9 +239,9 @@ import Hero from '../components/Hero.astro'
 ## 6. Contenu éditorial — ton et style
 
 ### Identité de marque
-- **Nom** : Macarel Studio
-- **Macarel** : exclamation patois audois de surprise/admiration — ne jamais l'expliquer de façon trop didactique dans le code
+- **Nom** : WebSylvain
 - **Positionnement** : artisan Rails, craft, hypermedia, Carcassonne
+- **Ancien nom** : Macarel Studio (le nom d'origine, conservé dans le logo "!" et l'exclamation historique)
 
 ### Ton de voix
 - Direct, sans jargon commercial
@@ -253,8 +253,8 @@ import Hero from '../components/Hero.astro'
 ```
 Tagline principale  : "Des outils métier qui font dire macarel."
 CTA principal       : "Parler du projet"
-CTA final           : "Macarel, on attaque."
-Email               : hello@macarel.studio
+CTA final           : "WebSylvain, au boulot."
+Email               : contact@websylvain.com
 Localisation        : Carcassonne, Occitanie
 ```
 
@@ -317,8 +317,8 @@ Three.js / WebGL  → expériences 3D côté front (cas spécifiques)
 
 ### ✅ À faire
 - Lire `src/styles/global.css` avant d'ajouter un composant — les classes existent peut-être déjà
-- Utiliser les variables CSS `var(--color-macarel-*)` pour les couleurs inline si la classe Tailwind n'existe pas
-- Utiliser `color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent)` pour les opacités — pas `bg-opacity-*`
+- Utiliser les variables CSS `var(--color-websylvain-*)` pour les couleurs inline si la classe Tailwind n'existe pas
+- Utiliser `color-mix(in srgb, var(--color-websylvain-pierre) 50%, transparent)` pour les opacités — pas `bg-opacity-*`
 - Proposer une interface `Props` pour tout nouveau composant
 - Garder le JS minimal — Astro est statique, on n'a pas besoin de React
 - Respecter les espacements : `px-10 py-12` sur les sections principales
@@ -328,7 +328,7 @@ Three.js / WebGL  → expériences 3D côté front (cas spécifiques)
 - Utiliser `font-bold` ou `font-semibold` — uniquement `font-normal` et `font-medium`
 - Ajouter des `shadow-*` décoratifs
 - Écrire du CSS en dehors de `global.css` sauf cas scoped inévitable
-- Utiliser `bg-white` pour le fond de page — c'est `bg-macarel-calcaire`
+- Utiliser `bg-white` pour le fond de page — c'est `bg-websylvain-calcaire`
 - Hardcoder des couleurs hex dans les classes Tailwind — passer par les tokens
 - Ajouter des dépendances npm sans le demander explicitement
 - Modifier le contenu éditorial (taglines, CTA, email) sans confirmation
@@ -338,6 +338,7 @@ Three.js / WebGL  → expériences 3D côté front (cas spécifiques)
 - Les `<details>` FAQ ont leurs styles dans un `<style>` scoped dans `ContactFaq.astro` — c'est intentionnel
 - Le logo est un SVG inline avec `<text>` — ne pas remplacer par une image
 - `border-thin` = `border-width: 0.5px` — classe custom définie dans `@layer utilities`
+- Tous les tokens CSS `macarel-*` ont été renommés en `websylvain-*` (classes Tailwind et variables CSS)
 
 ---
 
@@ -364,10 +365,10 @@ npm run astro check  # vérifie les types Astro/TS
 - [ ] Page `/projets` — réalisations (quand il y en aura)
 - [ ] SEO : sitemap, og:image, structured data
 - [ ] Favicon SVG finalisé
-- [ ] Mise en prod + domaine macarel.studio
+- [x] Mise en prod + domaine websylvain.com
 - [ ] Analytics (Plausible — pas Google Analytics)
 
 ---
 
-*Dernière mise à jour : avril 2025*
-*Macarel Studio · Carcassonne, Occitanie · hello@macarel.studio*
+*Dernière mise à jour : mai 2026*
+*WebSylvain · Carcassonne, Occitanie · contact@websylvain.com*

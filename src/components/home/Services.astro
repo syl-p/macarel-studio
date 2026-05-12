@@ -16,8 +16,8 @@ const services = Object.values(import.meta.glob('../../pages/services/*.md', { e
           <div class="card-icon" style={`background-color: ${s.frontmatter.iconBg};`}>
             <Fragment set:html={s.frontmatter.icon} />
           </div>
-          <h3 class="text-base font-bold text-macarel-encre mb-1.5">{s.frontmatter.title}</h3>
-          <p class="text-base text-macarel-schiste leading-relaxed mb-2.5">{s.frontmatter.description}</p>
+          <h3 class="text-base font-bold text-websylvain-encre mb-1.5">{s.frontmatter.title}</h3>
+          <p class="text-base text-websylvain-schiste leading-relaxed mb-2.5">{s.frontmatter.description}</p>
           <span class={s.frontmatter.badgeClass}>{s.frontmatter.badge}</span>
         </div>
       ))}

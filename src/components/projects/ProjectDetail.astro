@@ -20,7 +20,7 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
 {featuredImage && (
   <div
     class="relative overflow-hidden"
-    style="height: 420px; background-color: var(--color-macarel-nuit);"
+    style="height: 420px; background-color: var(--color-websylvain-nuit);"
   >
     <img
       src={featuredImage}
@@ -29,7 +29,7 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
     />
     <div
       class="absolute inset-0"
-      style="background: linear-gradient(to top, var(--color-macarel-calcaire) 0%, transparent 40%);"
+      style="background: linear-gradient(to top, var(--color-websylvain-calcaire) 0%, transparent 40%);"
     ></div>
   </div>
 )}
@@ -42,7 +42,7 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
       href="/projets"
       class="inline-flex items-center gap-1.5 text-xs no-underline mb-8
             transition-colors duration-200"
-      style="color: var(--color-macarel-schiste);"
+      style="color: var(--color-websylvain-schiste);"
     >
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
         <path d="M8 2L4 6l4 4" stroke="currentColor" stroke-width="1.3"
@@ -61,22 +61,22 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
       </span>
       {sector && (
         <>
-          <span style="color: var(--color-macarel-pierre);">·</span>
-          <span class="text-xs" style="color: var(--color-macarel-schiste);">{sector}</span>
+          <span style="color: var(--color-websylvain-pierre);">·</span>
+          <span class="text-xs" style="color: var(--color-websylvain-schiste);">{sector}</span>
         </>
       )}
       {client && (
         <>
-          <span style="color: var(--color-macarel-pierre);">·</span>
-          <span class="text-xs" style="color: var(--color-macarel-schiste);">{client}</span>
+          <span style="color: var(--color-websylvain-pierre);">·</span>
+          <span class="text-xs" style="color: var(--color-websylvain-schiste);">{client}</span>
         </>
       )}
-      <span style="color: var(--color-macarel-pierre);">·</span>
-      <span class="text-xs" style="color: var(--color-macarel-schiste);">{year}</span>
+      <span style="color: var(--color-websylvain-pierre);">·</span>
+      <span class="text-xs" style="color: var(--color-websylvain-schiste);">{year}</span>
     </div>
 
     <!-- Titre + tagline -->
-    <h1 class="text-display mb-4" style="color: var(--color-macarel-encre);">
+    <h1 class="text-display mb-4" style="color: var(--color-websylvain-encre);">
       {title}
     </h1>
     <p class="text-xl font-medium" style={`color: ${color};`}>
@@ -88,7 +88,7 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
 <!-- Corps : contenu .md + sidebar -->
 <section
   class="px-10 py-14 border-b border-thin"
-  style="border-color: color-mix(in srgb, var(--color-macarel-pierre) 50%, transparent);"
+  style="border-color: color-mix(in srgb, var(--color-websylvain-pierre) 50%, transparent);"
 >
   <div class="container mx-auto grid grid-cols-1 gap-14 sm:grid-cols-[1fr_280px] sm:items-start">
 

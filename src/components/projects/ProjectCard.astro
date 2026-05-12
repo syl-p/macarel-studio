@@ -19,7 +19,7 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
 <a href={`/projets/${project.id}`} class="block no-underline group">
   <div
     class="relative overflow-hidden rounded-xl min-h-[300px] flex items-end transition-shadow duration-200"
-    style={`background-color: var(--color-macarel-nuit);
+    style={`background-color: var(--color-websylvain-nuit);
             ${featuredImage ? `background-image: url(${featuredImage});` : ''}
             background-size: cover;
             background-position: center;`}
@@ -42,17 +42,17 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
         </span>
         {sector && (
           <>
-            <span style="color: var(--color-macarel-pierre);">·</span>
-            <span class="text-xs" style="color: var(--color-macarel-miel);">{sector}</span>
+            <span style="color: var(--color-websylvain-pierre);">·</span>
+            <span class="text-xs" style="color: var(--color-websylvain-miel);">{sector}</span>
           </>
         )}
-        <span style="color: var(--color-macarel-pierre);">·</span>
-        <span class="text-xs" style="color: var(--color-macarel-miel);">{year}</span>
+        <span style="color: var(--color-websylvain-pierre);">·</span>
+        <span class="text-xs" style="color: var(--color-websylvain-miel);">{year}</span>
         {featured && (
           <span
             class="text-xs font-medium px-2.5 py-1 rounded-md"
-            style="background-color: var(--color-macarel-roc);
-                   color: var(--color-macarel-miel);"
+            style="background-color: var(--color-websylvain-roc);
+                   color: var(--color-websylvain-miel);"
           >
             ★ Featured
           </span>
@@ -62,11 +62,11 @@ const sc = statusColors[status] || { bg: '#FDF6EE', text: '#7A5C40' }
       <!-- Titre + tagline -->
       <h2
         class="text-xl font-medium tracking-tight mb-1.5"
-        style="color: var(--color-macarel-calcaire);"
+        style="color: var(--color-websylvain-calcaire);"
       >
         {title}
       </h2>
-      <p class="text-sm leading-relaxed" style="color: var(--color-macarel-miel);">
+      <p class="text-sm leading-relaxed" style="color: var(--color-websylvain-miel);">
         {tagline}
       </p>
 
